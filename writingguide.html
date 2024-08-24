@@ -1,0 +1,1547 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.549">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Stefan Hochguertel">
+<meta name="dcterms.date" content="2023-10-25">
+
+<title>Writing an Academic Paper</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="writingguide_files/libs/clipboard/clipboard.min.js"></script>
+<script src="writingguide_files/libs/quarto-html/quarto.js"></script>
+<script src="writingguide_files/libs/quarto-html/popper.min.js"></script>
+<script src="writingguide_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="writingguide_files/libs/quarto-html/anchor.min.js"></script>
+<link href="writingguide_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="writingguide_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="writingguide_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="writingguide_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="writingguide_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<style>
+
+      .quarto-title-block .quarto-title-banner h1,
+      .quarto-title-block .quarto-title-banner h2,
+      .quarto-title-block .quarto-title-banner h3,
+      .quarto-title-block .quarto-title-banner h4,
+      .quarto-title-block .quarto-title-banner h5,
+      .quarto-title-block .quarto-title-banner h6
+      {
+        color: black;
+      }
+
+      .quarto-title-block .quarto-title-banner {
+        color: black;
+background: #FFDDFF;
+      }
+</style>
+<script>
+MathJax = {
+  loader: {load: ['[tex]/tagformat']},
+  section: 1,
+  tex: {
+    tags: 'ams',
+    packages: {'[+]': ['tagformat', 'sections']},
+    tagformat: {
+      number: (n) => MathJax.config.section + '.' + n
+    }
+  },
+  startup: {
+    ready() {
+      const Configuration = MathJax._.input.tex.Configuration.Configuration;
+      const CommandMap = MathJax._.input.tex.SymbolMap.CommandMap;
+      new CommandMap('sections', {
+        nextSection: 'NextSection'
+      }, {
+        NextSection(parser, name) {
+          MathJax.config.section++;
+          parser.tags.counter = parser.tags.allCounter = 0;
+        }
+      });
+      Configuration.create(
+        'sections', {handler: {macro: ['sections']}}
+      );
+      MathJax.startup.defaultReady();
+   }
+  }
+};
+</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body>
+
+<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page-right">
+      <h1 class="title">Writing an Academic Paper</h1>
+            <p class="subtitle lead"></p><div class="line-block">A Short Guide for Students<br>
+<br>
+MSc Economics • Vrije Universiteit Amsterdam</div><p></p>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-page-right">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Stefan Hochguertel </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">October 25, 2023</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Modified</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">October 25, 2023</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  <div>
+    <div class="abstract">
+      <div class="block-title">Abstract</div>
+      <p>This writing guide gives some hopefully useful hints and suggestions on how to go through the process of writing and presenting a term paper (Research Project) or final (master) Thesis. It complements the more formal Manual for Research Project and Thesis, as well as rules and regulations set by the faculty board.</p>
+    </div>
+  </div>
+  
+  </header><div id="quarto-content" class="page-columns page-rows-contents page-layout-full toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="1">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">PREFACE</a>
+  <ul class="collapse">
+  <li><a href="#formal-restrictions-and-requirements" id="toc-formal-restrictions-and-requirements" class="nav-link" data-scroll-target="#formal-restrictions-and-requirements">Formal Restrictions and Requirements</a></li>
+  <li><a href="#this-document" id="toc-this-document" class="nav-link" data-scroll-target="#this-document">This Document</a></li>
+  </ul></li>
+  <li><a href="#main-points-from-a-helicopter-perspective" id="toc-main-points-from-a-helicopter-perspective" class="nav-link" data-scroll-target="#main-points-from-a-helicopter-perspective">Main Points From A Helicopter Perspective</a></li>
+  <li><a href="#sec-key" id="toc-sec-key" class="nav-link" data-scroll-target="#sec-key"><span class="header-section-number">1</span> Key Deliverables</a>
+  <ul class="collapse">
+  <li><a href="#research-project" id="toc-research-project" class="nav-link" data-scroll-target="#research-project"><span class="header-section-number">1.1</span> Research Project</a></li>
+  <li><a href="#policy-seminars-policy-brief" id="toc-policy-seminars-policy-brief" class="nav-link" data-scroll-target="#policy-seminars-policy-brief"><span class="header-section-number">1.2</span> Policy Seminars &amp; Policy Brief</a></li>
+  <li><a href="#thesis" id="toc-thesis" class="nav-link" data-scroll-target="#thesis"><span class="header-section-number">1.3</span> Thesis</a></li>
+  <li><a href="#evaluation" id="toc-evaluation" class="nav-link" data-scroll-target="#evaluation"><span class="header-section-number">1.4</span> Evaluation</a></li>
+  </ul></li>
+  <li><a href="#sec-proc" id="toc-sec-proc" class="nav-link" data-scroll-target="#sec-proc"><span class="header-section-number">2</span> Management and Organization of the Process</a>
+  <ul class="collapse">
+  <li><a href="#responsibilities" id="toc-responsibilities" class="nav-link" data-scroll-target="#responsibilities"><span class="header-section-number">2.1</span> Responsibilities</a></li>
+  <li><a href="#skill-development" id="toc-skill-development" class="nav-link" data-scroll-target="#skill-development"><span class="header-section-number">2.2</span> Skill Development</a></li>
+  <li><a href="#planning-and-milestones" id="toc-planning-and-milestones" class="nav-link" data-scroll-target="#planning-and-milestones"><span class="header-section-number">2.3</span> Planning and Milestones</a></li>
+  <li><a href="#time-line" id="toc-time-line" class="nav-link" data-scroll-target="#time-line"><span class="header-section-number">2.4</span> Time Line</a></li>
+  <li><a href="#time-management" id="toc-time-management" class="nav-link" data-scroll-target="#time-management"><span class="header-section-number">2.5</span> Time Management</a></li>
+  </ul></li>
+  <li><a href="#sec-superv" id="toc-sec-superv" class="nav-link" data-scroll-target="#sec-superv"><span class="header-section-number">3</span> Supervision</a>
+  <ul class="collapse">
+  <li><a href="#supervisor-contact-and-communication" id="toc-supervisor-contact-and-communication" class="nav-link" data-scroll-target="#supervisor-contact-and-communication"><span class="header-section-number">3.1</span> Supervisor Contact and Communication</a></li>
+  <li><a href="#supervisor-student-relation" id="toc-supervisor-student-relation" class="nav-link" data-scroll-target="#supervisor-student-relation"><span class="header-section-number">3.2</span> Supervisor-Student Relation</a></li>
+  <li><a href="#supervision" id="toc-supervision" class="nav-link" data-scroll-target="#supervision"><span class="header-section-number">3.3</span> Supervision</a></li>
+  </ul></li>
+  <li><a href="#sec-lit" id="toc-sec-lit" class="nav-link" data-scroll-target="#sec-lit"><span class="header-section-number">4</span> Literature</a>
+  <ul class="collapse">
+  <li><a href="#finding-and-evaluating-sources" id="toc-finding-and-evaluating-sources" class="nav-link" data-scroll-target="#finding-and-evaluating-sources"><span class="header-section-number">4.1</span> Finding and Evaluating Sources</a></li>
+  <li><a href="#types-of-publication" id="toc-types-of-publication" class="nav-link" data-scroll-target="#types-of-publication"><span class="header-section-number">4.2</span> Types of Publication</a></li>
+  <li><a href="#publishing-process" id="toc-publishing-process" class="nav-link" data-scroll-target="#publishing-process"><span class="header-section-number">4.3</span> Publishing Process</a></li>
+  <li><a href="#reading" id="toc-reading" class="nav-link" data-scroll-target="#reading"><span class="header-section-number">4.4</span> Reading</a></li>
+  <li><a href="#academic-writing" id="toc-academic-writing" class="nav-link" data-scroll-target="#academic-writing"><span class="header-section-number">4.5</span> (Academic) Writing</a></li>
+  </ul></li>
+  <li><a href="#sec-soft" id="toc-sec-soft" class="nav-link" data-scroll-target="#sec-soft"><span class="header-section-number">5</span> Software</a>
+  <ul class="collapse">
+  <li><a href="#word-processor" id="toc-word-processor" class="nav-link" data-scroll-target="#word-processor"><span class="header-section-number">5.1</span> Word Processor</a></li>
+  <li><a href="#statistical-and-mathematical-software" id="toc-statistical-and-mathematical-software" class="nav-link" data-scroll-target="#statistical-and-mathematical-software"><span class="header-section-number">5.2</span> Statistical and Mathematical Software</a></li>
+  </ul></li>
+  <li><a href="#sec-lang" id="toc-sec-lang" class="nav-link" data-scroll-target="#sec-lang"><span class="header-section-number">6</span> Language and Style</a>
+  <ul class="collapse">
+  <li><a href="#english" id="toc-english" class="nav-link" data-scroll-target="#english"><span class="header-section-number">6.1</span> English</a></li>
+  <li><a href="#academic-writing-style" id="toc-academic-writing-style" class="nav-link" data-scroll-target="#academic-writing-style"><span class="header-section-number">6.2</span> Academic Writing Style</a></li>
+  </ul></li>
+  <li><a href="#sec-content" id="toc-sec-content" class="nav-link" data-scroll-target="#sec-content"><span class="header-section-number">7</span> Content</a>
+  <ul class="collapse">
+  <li><a href="#sec-rp" id="toc-sec-rp" class="nav-link" data-scroll-target="#sec-rp"><span class="header-section-number">7.1</span> Research Project</a></li>
+  <li><a href="#sec-pspb" id="toc-sec-pspb" class="nav-link" data-scroll-target="#sec-pspb"><span class="header-section-number">7.2</span> Policy Seminars &amp; Policy Brief</a></li>
+  <li><a href="#thesis-1" id="toc-thesis-1" class="nav-link" data-scroll-target="#thesis-1"><span class="header-section-number">7.3</span> Thesis</a>
+  <ul class="collapse">
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">7.3.1</span> Introduction</a></li>
+  <li><a href="#literature-review" id="toc-literature-review" class="nav-link" data-scroll-target="#literature-review"><span class="header-section-number">7.3.2</span> Literature Review</a></li>
+  <li><a href="#approach-design-methodology" id="toc-approach-design-methodology" class="nav-link" data-scroll-target="#approach-design-methodology"><span class="header-section-number">7.3.3</span> Approach, Design, Methodology</a></li>
+  <li><a href="#sec-disc" id="toc-sec-disc" class="nav-link" data-scroll-target="#sec-disc"><span class="header-section-number">7.3.4</span> Results, Interpretation, and Discussion</a></li>
+  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions"><span class="header-section-number">7.3.5</span> Conclusions</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#sec-emp" id="toc-sec-emp" class="nav-link" data-scroll-target="#sec-emp"><span class="header-section-number">8</span> Specific Examples Relating to Empirical Economic Work</a>
+  <ul class="collapse">
+  <li><a href="#empirical-methodology" id="toc-empirical-methodology" class="nav-link" data-scroll-target="#empirical-methodology"><span class="header-section-number">8.1</span> Empirical Methodology</a></li>
+  <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation"><span class="header-section-number">8.2</span> Interpretation</a></li>
+  <li><a href="#documentation-and-replicability" id="toc-documentation-and-replicability" class="nav-link" data-scroll-target="#documentation-and-replicability"><span class="header-section-number">8.3</span> Documentation and Replicability</a></li>
+  <li><a href="#data-sources" id="toc-data-sources" class="nav-link" data-scroll-target="#data-sources"><span class="header-section-number">8.4</span> Data Sources</a></li>
+  </ul></li>
+  <li><a href="#sec-layout" id="toc-sec-layout" class="nav-link" data-scroll-target="#sec-layout"><span class="header-section-number">9</span> Layout</a>
+  <ul class="collapse">
+  <li><a href="#cover-page" id="toc-cover-page" class="nav-link" data-scroll-target="#cover-page"><span class="header-section-number">9.1</span> Cover Page</a></li>
+  <li><a href="#title" id="toc-title" class="nav-link" data-scroll-target="#title"><span class="header-section-number">9.2</span> Title</a></li>
+  <li><a href="#table-of-contents" id="toc-table-of-contents" class="nav-link" data-scroll-target="#table-of-contents"><span class="header-section-number">9.3</span> Table of Contents</a></li>
+  <li><a href="#sectioning" id="toc-sectioning" class="nav-link" data-scroll-target="#sectioning"><span class="header-section-number">9.4</span> Sectioning</a></li>
+  <li><a href="#flow" id="toc-flow" class="nav-link" data-scroll-target="#flow"><span class="header-section-number">9.5</span> Flow</a></li>
+  <li><a href="#equations" id="toc-equations" class="nav-link" data-scroll-target="#equations"><span class="header-section-number">9.6</span> Equations</a></li>
+  <li><a href="#sec-tabs" id="toc-sec-tabs" class="nav-link" data-scroll-target="#sec-tabs"><span class="header-section-number">9.7</span> Tables</a></li>
+  <li><a href="#sec-figs" id="toc-sec-figs" class="nav-link" data-scroll-target="#sec-figs"><span class="header-section-number">9.8</span> Figures</a></li>
+  <li><a href="#remark.-tables-and-figures-from-other-published-sources" id="toc-remark.-tables-and-figures-from-other-published-sources" class="nav-link" data-scroll-target="#remark.-tables-and-figures-from-other-published-sources">Remark. Tables and Figures from Other Published Sources</a></li>
+  <li><a href="#notation" id="toc-notation" class="nav-link" data-scroll-target="#notation"><span class="header-section-number">9.9</span> Notation</a></li>
+  <li><a href="#page-numbers-footnotes-referencing-and-citation" id="toc-page-numbers-footnotes-referencing-and-citation" class="nav-link" data-scroll-target="#page-numbers-footnotes-referencing-and-citation"><span class="header-section-number">9.10</span> Page Numbers, Footnotes, Referencing and Citation</a></li>
+  <li><a href="#quotes-and-emphasis" id="toc-quotes-and-emphasis" class="nav-link" data-scroll-target="#quotes-and-emphasis"><span class="header-section-number">9.11</span> Quotes and Emphasis</a></li>
+  <li><a href="#bibliography" id="toc-bibliography" class="nav-link" data-scroll-target="#bibliography"><span class="header-section-number">9.12</span> Bibliography</a></li>
+  <li><a href="#appendices" id="toc-appendices" class="nav-link" data-scroll-target="#appendices"><span class="header-section-number">9.13</span> Appendices</a></li>
+  <li><a href="#additional-elements" id="toc-additional-elements" class="nav-link" data-scroll-target="#additional-elements"><span class="header-section-number">9.14</span> Additional Elements</a></li>
+  <li><a href="#length-and-format" id="toc-length-and-format" class="nav-link" data-scroll-target="#length-and-format"><span class="header-section-number">9.15</span> Length and Format</a></li>
+  </ul></li>
+  <li><a href="#sec-pres" id="toc-sec-pres" class="nav-link" data-scroll-target="#sec-pres"><span class="header-section-number">10</span> Presentation and Discussion</a>
+  <ul class="collapse">
+  <li><a href="#purpose" id="toc-purpose" class="nav-link" data-scroll-target="#purpose"><span class="header-section-number">10.1</span> Purpose</a></li>
+  <li><a href="#content" id="toc-content" class="nav-link" data-scroll-target="#content"><span class="header-section-number">10.2</span> Content</a></li>
+  <li><a href="#form" id="toc-form" class="nav-link" data-scroll-target="#form"><span class="header-section-number">10.3</span> Form</a></li>
+  <li><a href="#presentation-style" id="toc-presentation-style" class="nav-link" data-scroll-target="#presentation-style"><span class="header-section-number">10.4</span> Presentation Style</a></li>
+  <li><a href="#sec-prespitch" id="toc-sec-prespitch" class="nav-link" data-scroll-target="#sec-prespitch"><span class="header-section-number">10.5</span> Thesis Pitch Presentation</a></li>
+  <li><a href="#sec-presdiff" id="toc-sec-presdiff" class="nav-link" data-scroll-target="#sec-presdiff"><span class="header-section-number">10.6</span> Difference between Research Project and Thesis</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">11</span> References</a>
+  <ul class="collapse">
+  <li><a href="#sec-refs" id="toc-sec-refs" class="nav-link" data-scroll-target="#sec-refs"><span class="header-section-number">11.1</span> An Example Reference List</a></li>
+  <li><a href="#sec-links" id="toc-sec-links" class="nav-link" data-scroll-target="#sec-links"><span class="header-section-number">11.2</span> Resources</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+</div>
+<main class="content quarto-banner-title-block column-page-right" id="quarto-document-content">
+
+
+
+
+
+<style>
+.flushright {
+   text-align: right;
+}
+</style>
+<!-- SECTION ********************************************************** -->
+<section id="preface" class="level1 unnumbered">
+<h1 class="unnumbered">PREFACE</h1>
+<!-- SECTION ********************************************************** -->
+<p>Students in the MSc Economics write two significant, single-authored academic papers under supervision during the course of the program. These are the January papers from the “Research Project” or the “Policy Seminars &amp; Policy Brief” modules, and the Master’s Thesis. Even though these papers are on a different level and have a different purpose and scope, they are conceptually closely related.</p>
+<p>Writing papers can be a very rewarding experience. You create something new that has not been around before. You learn on the way. You articulate your scholarly view on a topic of your choice. You shall have an audience. Here, we try to get you started.</p>
+<p>There are many aspects to consider before embarking on such a project whose genesis may take many weeks. This brief guide tries to give hints and clues on how to prepare, where to begin and what to take into account.</p>
+<!-- SubSection........................................................ -->
+<section id="formal-restrictions-and-requirements" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="formal-restrictions-and-requirements">Formal Restrictions and Requirements</h2>
+<p>Certain formal restrictions on writing for Research Project, Policy Seminars &amp; Policy Brief and Thesis apply and two main documents should be consulted before continuing to read the present document. The first is a set of documents titled ‘Manual’ for Thesis, Research Project, and Policy Seminars &amp; Policy Brief. Henceforth, we refer to it as ‘(the) Manual’. Skip to <a href="#sec-links" class="quarto-xref">Section&nbsp;11.2</a> of the present document, item 1., on what it is, and item 2. on where to find it.</p>
+<p>Second, there are faculty-wide guidelines, rules and regulations concerning the entire program and its various forms of assessment (‘Teaching and Examination Regulations’ a.k.a.&nbsp;‘TER’). The TER, but also additional practical deadlines from the faculty student administration (such as the latest date when to hand in the thesis before applying for a diploma, or dates of graduation ceremonies) can typically be found on the School’s website (see <a href="#sec-links" class="quarto-xref">Section&nbsp;11.2</a>, item 3.).</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="this-document" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="this-document">This Document</h2>
+<p>The present document, which will be referred to as ‘Writing Guide’, is not about any of the formalities (we assume as of now that you are aware of them). Rather, the writing guide deals with the question of how to actually write a paper. It covers both aspects of the process of reading and writing and aspects of producing a readable document. This writing guide has no official status and only serves as an informal piece of advice. There may remain mistakes, omissions, and inconsistencies.</p>
+<p>Many thanks to Frank den Butter, Sabien Dobbelaere, Abdessalam Es-Saghir, Bart Hobijn, Remco Oostendorp, and Matthijs de Zwaan for comments on previous drafts. Please contact the undersigned for additional questions, remarks, comments, hints, tips, and suggestions.</p>
+<p>Working on a paper requires hard work, but has the benefit of your work being read and discussed in public. We wish you a very productive, rewarding, and enriching experience.</p>
+<div class="flushright">
+<p>Amsterdam, October 2023<br> <a href="mailto:thesis.economics.sbe@vu.nl">Stefan Hochguertel</a> <br> Coordinator for Research Project and Thesis<br></p>
+</div>
+<!-- SECTION ********************************************************** -->
+</section>
+</section>
+<section id="main-points-from-a-helicopter-perspective" class="level1 unnumbered">
+<h1 class="unnumbered">Main Points From A Helicopter Perspective</h1>
+<!-- SECTION ********************************************************** -->
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Hard work required!</p>
+</div>
+</div>
+<ul>
+<li>Writing a paper is a process, it requires planning, diligence, organization, thoughtfulness, precision, and many other skills; keep developing these skills.</li>
+<li>Start work early; do not wait; try to anticipate which pieces of the process require most time; plan accordingly.</li>
+<li>Take initiative, be pro-active, and contact your supervisor in time.</li>
+<li>Obey all set deadlines and set yourself intermediate goals.</li>
+<li>Start with a clear structure; be flexible enough to adopt the structure to changing focus.</li>
+<li>Make a short list with main points for yourself, always keep the main message of your piece in mind (frame it, hang it over the bed).</li>
+<li>Writing takes time, it is safe to assume that you will have to go over the text again and again.</li>
+<li>Always keep your readers in mind: you write for them, you want to tell them something new and interesting, and convince them of your argument.</li>
+<li>Supervision: no output (from you) = no input (for you).</li>
+<li>Scientific reasoning thrives on criticism; scientific writing needs a critical attitude to both the literature and to your own argument; how much can you actually say with certainty?</li>
+<li>Theoretical insights can be obtained by falsification (Popper).</li>
+<li>Scientific reasoning needs documentation of data, methodology and results with replicability in mind.</li>
+<li>Authorship requires intellectual honesty and integrity, originality and accountability. Make sure to be the sole author of your piece.</li>
+<li>Your task is to show that you can do research and produce a thesis. Your task is not to save the world.</li>
+</ul>
+<!-- SECTION ********************************************************** -->
+</section>
+<section id="sec-key" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Key Deliverables</h1>
+<!-- SECTION ********************************************************** -->
+<p>What is expected from you? Briefly said, going through the process of supervised writing and some tangible output in the form of a paper. While more precise definitions and rules will be mapped out in the Manual, for the purpose of this document is may suffice to briefly sketch the key deliverables as follows.</p>
+<!-- SubSection........................................................ -->
+<section id="research-project" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="research-project"><span class="header-section-number">1.1</span> Research Project</h2>
+<p>Students are asked to review a coherent set of around 10 scientific papers, of which around four core contributions. The process requires to reflect on those contributions, to put them into perspective, and to write a critical evaluation. The Research Project is submitted in the form of an academic paper. The main results will be presented and discussed in public.</p>
+<p>The ultimate goal is to have students show proficiency in independent, scientific writing, from an economic perspective. Main procedural or learning objective is to acquire and apply practical skills that characterize a good academic economist. Those skills relate to the ability to identify, select and understand salient contributions to an academic debate. The resulting paper should hence provide evidence that the student masters a certain subfield of the literature. The student needs to assess the relative contributions of different articles to this area, and should, where possible, show the capacity to identify remaining blind spots. Students are also required to present this knowledge in a structured way, both as a written report and in the form of an oral presentation.</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="policy-seminars-policy-brief" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="policy-seminars-policy-brief"><span class="header-section-number">1.2</span> Policy Seminars &amp; Policy Brief</h2>
+<p>Please consult the information posted on Canvas for this course.</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="thesis" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="thesis"><span class="header-section-number">1.3</span> Thesis</h2>
+<p>The thesis is similar, but goes a lot deeper. To preview what is expected: the final product may in many cases bear important similarities to a published paper in an economics journal, with a focused research question, and data and methods that lead to an answer of that question. Economics theses, certainly in the present program, often conclude with policy implications (where applicable and appropriate). Originality is encouraged, but this can be accomplished in many ways—including a replication analysis of earlier work with a thorough discussion.</p>
+<p>What a good paper in economics does is to ask a good and meaningful economic question, and to provide an answer to that question. This makes the thesis conceptually very different from a course: there, students learn about a subject, its main research questions, and understand how to arrive at an answer to that question; in thesis work, identifying the question is a very important aspect of the intellectual work as well.</p>
+<p>Many good theses will thus have in common: a focused, relevant and interesting research question, a targeted literature review, an intelligent and suitable research design, documentation with replicability in mind, a thorough analysis, substantive interpretation of results, clear conclusions and policy implications. The main argument will be helped by care in writing style, editing and referencing. The presentation should be clear and convincing.</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="evaluation" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="evaluation"><span class="header-section-number">1.4</span> Evaluation</h2>
+<p>Both Research Project and Policy Seminars &amp; Policy Brief, as well as Thesis have a set of criteria that are being applied for evaluation. For details, see the Manual. It may help in the preparation of your document to be aware of them. While there is emphasis on output-oriented criteria, evaluation also considers process- or input-related aspects, such as independence in working, ability to discuss and reflect, the overall effort taken, and the diligence in execution. Evaluators also may want to take into account the level of ambition and the degree of originality (risk taking, with an eye to innovation, may be encouraged).</p>
+<!-- SECTION ********************************************************** -->
+</section>
+</section>
+<section id="sec-proc" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Management and Organization of the Process</h1>
+<div style="display:none">
+<span class="math inline">\(\nextSection\)</span>
+</div>
+<!-- SECTION ********************************************************** -->
+<!-- SubSection........................................................ -->
+<section id="responsibilities" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="responsibilities"><span class="header-section-number">2.1</span> Responsibilities</h2>
+<p>There are typically two, sometimes three persons involved in the writing/supervision/assessment stages of papers. The first is the student, the author. The second is the supervisor. The third (for theses only) is the so-called second assessor. All three have different responsibilities.</p>
+<p>The student bears the responsibility of choosing a topic, for managing the research progress and for conducting all work. The supervisor has responsibilities associated with grading and supervision. The latter is mainly guidance on the topic and feedback on the content. The second assessor is involved in grading the thesis, but will not give direct guidance or feedback to the student.</p>
+<p>It is the student’s responsibility to meet all deadlines, and to initiate contact with the supervisor. Supervisors must be consulted for advice.</p>
+<p>An academic paper embodies original work. This may involve to have to leave the well-trodden path. Be aware that even your supervisor may not have a ready answer to all your queries and problems that may emerge during the journey. Supervision is more about discussion, less about monologues. Writing an academic paper implies that the author is expected to have the problem-owning attitude and problem-solving capacity to provide first attempts to resolve issues encountered.</p>
+<p>You are the author of what you write. That includes that you need to bring out your own thoughts on whatever you read. And it requires proper scientific attribution to other people’s work, ideas, and thoughts. See further the sections on Authorship, (Fraud) and Plagiarism in the Manual, but also <a href="#sec-links" class="quarto-xref">Section&nbsp;11.2</a>, item 8. of this text.</p>
+<p>Responsibility of authorship also includes documentation at intermediate phases of the research process. For empirical work, statistical and data management programs should be documented, with the goal in mind of facilitating replicability. During the process it may turn out that certain approaches do not work, are inapplicable or otherwise inappropriate, or that some aspects are unimportant. This may deserve mentioning.</p>
+<p>The supervisor will not do any work for you. He or she will not program software routines, provide substantial data analysis, calculate equilibria, write your text or organize your time management for you. He or she will not offer you a to-do list that you need to check off.</p>
+<p>Lastly, there is a coordinator. In case things really don’t work for you, contact him or her. The coordinator is in addition responsible for administration and organization of the process.</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="skill-development" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="skill-development"><span class="header-section-number">2.2</span> Skill Development</h2>
+<p>Many skills are required when writing a paper or a thesis. They range from organizational talents and time management skills to writing capabilities, from mastering tools of analysis to interpretation, and to the ability of placing own work in context.</p>
+<p>Assess and develop your various skills as you go. Let other people read what you write (your supervisor, fellow students, and perhaps even outsiders to the field). Listen to their comments. Use the evaluation and assessment criteria in the Manual as a checklist in order to have a guide for your own quality assessment.</p>
+<p>Check if you can manage to meet your own deadlines. If not, devise gratification schemes (treat yourself to a cookie if (and only if!) you send your draft by Thursday noon).</p>
+<p>Develop a critical attitude to your own work. Look back on what you have achieved, look ahead to the challenges down the road. Adjust your way of doing things if they don’t go well.</p>
+<p>Finally, do not pretend you can be perfect. Perfectionism is often enough the enemy of achievement.</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="planning-and-milestones" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="planning-and-milestones"><span class="header-section-number">2.3</span> Planning and Milestones</h2>
+<p>Start with a topic choice. You might be able to think of a number of interesting, important, or challenging fields of application on which economists have something to say. Choose a topic that meets your interest and that you feel intrinsically motivated for—you may have to focus on that topic for a number of months. Also choose a topic that you expect to be able to manage (in terms of technical requirements, data availability and skill requirements). Choose a topic that is commensurate with the goals of the exercise: a topic that lets you show that you are able to conduct independent research. If this still leaves a choice, choose a topic that may go down well with prospective employers (a ministry may have different preferences than a commercial bank).</p>
+<p>Second, make a work plan (and keep the flexibility of adjustment).</p>
+<p>Third, discuss important deliverables with your supervisor. These include</p>
+<ul>
+<li>formulating a clear research question</li>
+<li>mapping out a structure for the piece and a work plan</li>
+<li>a thesis pitch presentation</li>
+<li>intermediate drafts</li>
+<li>a final draft</li>
+<li>a final presentation.</li>
+</ul>
+<p>It is important to keep in mind the main objective of your research (research question), and to formulate and assess intermediate goals (milestones) that need to be reached at certain stages and points in time. These intermediate goals may refer to things like literature collection, reading articles, summarizing ideas, data collection, analysis and assessment of reliability, chapter drafts, first or second drafts, etc.</p>
+<p>Writing things up can, but does not need to, start early. This may help preventing a writer’s block, but may have the disadvantage of fixing ideas early on too much. The art is to produce a malleable intermediate product. The text needs to change and to be rewritten as your thoughts develop.</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="time-line" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="time-line"><span class="header-section-number">2.4</span> Time Line</h2>
+<p>A tentative time line for the process can then be developed. Please refer to the Manual and Canvas for precise deadlines and an example time line. Keep in mind that some details will also depend on the preferences of the supervisor.</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="time-management" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="time-management"><span class="header-section-number">2.5</span> Time Management</h2>
+<p>Papers don’t write themselves. Things can (and will) not go as anticipated. Start work early. Allow for slack time. Enthusiasm and time optimism are good things to get and keep going, but try to be realistic in terms of goals you set yourself.</p>
+<p>In addition, it can help to have a plan B. A fallback option in case your endeavours don’t work out the way they should at a particular stage. Think of what to do if unanticipated delays occur. Prioritize your tasks, and try to resolve most pressing issues first. Can some elements of your project be skipped altogether? If you get into severe time trouble, talk to your supervisor early enough to adjust the ambition level or to switch topics if needed.</p>
+<p>Make clear to yourself (and possibly to your supervisor), that your time is limited and that you cannot be overambitious in terms of innovation. It is better to make small steps and to set them well, than trying to make big leaps without the necessary preparation.</p>
+<p>It is reasonable to assume that there are diminishing returns to any task to be performed. So it will be ever and ever more difficult to make large steps in the later stages of a task. However, there are also cross-derivatives, so the multi-task process may gain from investing some time into various dimensions of it.</p>
+<p>Keep following the main train of thought. Try not to pursue secondary arguments in too much depth, as these may be time-consuming activities. Research is a hydra: solving one problem generates many new ones. Talk to your supervisor to find focus. Lastly, but also importantly, plan off-time.</p>
+<!-- SECTION ********************************************************** -->
+</section>
+</section>
+<section id="sec-superv" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Supervision</h1>
+<div style="display:none">
+<span class="math inline">\(\nextSection\)</span>
+</div>
+<!-- SECTION ********************************************************** -->
+<!-- SubSection........................................................ -->
+<section id="supervisor-contact-and-communication" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="supervisor-contact-and-communication"><span class="header-section-number">3.1</span> Supervisor Contact and Communication</h2>
+<p>The supervisor should be one of our faculty members. The Manual specifies details of the supervisor-student matching process. It is your responsibility to make and keep contact.</p>
+<p>Consult your supervisor, allowing for appropriate time for scheduling appointments and receiving feedback. Email will be the preferred way of being contacted by faculty members. Send friendly reminders if you have to wait too long (a number of days) for a response. If an email is being left unanswered this may simply mean that it slipped attention. You may want to be reminded to send emails from your <code>@student.vu.nl</code> account, as those have a lower (but non-zero) probability to end up in a spam folder.</p>
+<p>Keep in mind that people are not always present or may not always have time on short notice. Do find a way of communicating effectively. Next to email, you may suggest using alternative technology for face-to-face meetings (for instance via Zoom, Teams, or other means) if the supervisor stays elsewhere for longer periods.</p>
+<p>Face-to-face meetings can be very effective ways to talk about problems and strategies. Supervisors also need to know how you are dealing with obstacles in the process, and how you think about your problem. They will want to assess whether you have a problem-owning attitude and how you respond to suggestions. The number of face-to-face meetings varies across students and supervisors. A handful seems appropriate, general guidelines are hard to give, but we write in the Manual that you should have six such meetings for a thesis, including start-up meeting and presentation days.</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="supervisor-student-relation" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="supervisor-student-relation"><span class="header-section-number">3.2</span> Supervisor-Student Relation</h2>
+<p>As elsewhere in professional interaction, it is important to get into good working terms with your supervisor. Perhaps it is best to see the student-supervisor relation as an implicit contract. Supervisors are aware of their responsibility towards the students they supervise. Conversely, they expect students to comply to certain norms of behavior.</p>
+<p>Our faculty members are trained economists that do research. This needs focus and is time consuming. In addition, they teach, do administration work, give policy advice, and are involved in management and organization tasks of the university. They also travel abroad. Most have a busy schedule.</p>
+<p>Some of this would suggest that they expect no undue violation of agreements and not to have to waste precious time. It therefore helps if you keep to appointments and deadlines and try to avoid last-minute cancellations that possibly upset their schedule (of course, cancellations are better than no-shows). Try not to bother them with unreasonable requests (for instance, things that are not of direct concern to them or things that you can easily look up yourself). On the other hand, most will be quite willing to help along a number of margins. In case you experience difficulties in communicating with your supervisor or feel unduly treated, contact the coordinator.</p>
+<p>Prepare your meetings. Be prepared that the supervisor is not as well prepared and remind him or her of important aspects of your work. Always send intermediate pieces of writing, or other material in advance: you will not get feedback (new input) if you have nothing (no output) to show.</p>
+<p>Finally, agree on what steps to take for the next round.</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="supervision" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="supervision"><span class="header-section-number">3.3</span> Supervision</h2>
+<p>Your supervisor can help you writing a paper by asking stimulating feedback questions and by discussing the topic, by pointing to problems in argumentation, to errors and omissions. He or she can provide guidance in getting through the process, give hints on scientific inquiry and methodology, suggest additional sources for literature.</p>
+<p>Most valuable in the process is perhaps to get critical questions on your work and on your thoughts. Scientific inquiry is at its very root a bit of a truth-finding endeavor (to the extent that there is such a thing as ‘truth’). How sure can we be of the results obtained? Do results allow for alternative interpretation? Critical questions are often signals of inherent interest in the topic.</p>
+<p>At the same time, the supervisor expects you to be responsive to suggestions and to at least be able to present evidence of your having thought about if not dealt with those. This may involve, for instance, that you are able to show program code of your work, and results on changed specifications of a model or that you briefly summarize additional aspects of a theory, even if you decide to leave those out of your final product. Supervision accompanies the process of working and writing and is not confined to grading a piece that is submitted.</p>
+<p>Some supervisors actually love to see how you deal with questions and challenges, want to know what your thoughts are, and possibly learn new things themselves. But again, while supervisors are asked to be responsive to student queries, students should take the initiative.</p>
+<!-- SECTION ********************************************************** -->
+</section>
+</section>
+<section id="sec-lit" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Literature</h1>
+<div style="display:none">
+<span class="math inline">\(\nextSection\)</span>
+</div>
+<!-- SECTION ********************************************************** -->
+<blockquote class="blockquote">
+<p><q>At one time, within our memories, a diligent economist could read all the new research in our field. Before the tremendous increases in the sheer volume and variety of research output seen over our lifetimes, there were six significant journals in the English language. If one looked at them, one would be sure of not missing any significant idea.<br> […] Economics is one of the least specialized of all academic fields. Any economist feels capable of at least understanding and possibly even evaluating work in many areas of specialization. But the growth of the literature has made it less and less possible to understand the frontier of a field other than one’s own (and even that is increasingly difficult).</q></p>
+<div class="flushright">
+<p>Kenneth J. Arrow and Timothy Bresnahan<br> Preface, <em>Annual Review of Economics</em>, Vol. 1, 2009.</p>
+</div>
+</blockquote>
+<!-- SubSection........................................................ -->
+<section id="finding-and-evaluating-sources" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="finding-and-evaluating-sources"><span class="header-section-number">4.1</span> Finding and Evaluating Sources</h2>
+<p>Your academic work starts where textbooks stop. That implies you should read original research articles.</p>
+<p>A central part of your task will be to find and read relevant literature. There are some tips on the Canvas site (item 2. at <a href="#sec-links" class="quarto-xref">Section&nbsp;11.2</a>) that may come in handy. Reading is, as everything, a process. You should read much, but not too much. It will be important to quickly identify those papers that are instrumental in your area of study. But you will read more than those. You should try to gain a quick access to the core of a paper and decide whether it is worth reading. Consider the following quick check</p>
+<ul>
+<li>Does the title suggest that it is of interest?</li>
+<li>Does the abstract convey that the main message is relevant to you?</li>
+<li>Does the list of keywords or JEL codes suggest that it is in the area you are looking at?</li>
+<li>Does the author’s name ring a bell?</li>
+<li>Has the paper been cited in other relevant work?</li>
+</ul>
+<p>If you decide that it might be worth looking at, read the introduction. What point does the author make, what is in the paper? What methods are being used, what data are being studied? What contribution is in it? Then, skip to the conclusions and read those. What is the range of applicability of the paper to other questions not answered in the paper? What policy conclusions emerge? You may then want to read the entire paper in more detail.</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="types-of-publication" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="types-of-publication"><span class="header-section-number">4.2</span> Types of Publication</h2>
+<p>Economics has a classical hierarchy of publication types where you may expect a high correlation between publication type and quality (innovation and generality). Publications are either peer-reviewed, or they are not. If they are not, it is not a priori clear how important the contribution of the paper is to the field. If they are, there are ways to rank publication types. Some of the most important publication types are</p>
+<ul>
+<li>General, international economics journals.</li>
+<li>International field journals.</li>
+<li>National journals (possibly non-English).</li>
+<li>Reputable handbook series.</li>
+<li>Collected volumes.</li>
+<li>Monographs and textbooks.</li>
+<li>Policy reports.</li>
+<li>Working papers.</li>
+</ul>
+<p>While there is considerable disagreement on how to measure the quality of an outlet, a widely-accepted rule of thumb is that the big-five journals contain important contributions to economics. These are (alphabetically): American Economic Review (AER), Econometrica, Journal of Political Economy (JPE), Quarterly Journal of Economics (QJE), Review of Economic Studies (RES). There is also a range of sub-top journals (such as the Economic Journal, or the Journal of the European Economic Association, and many others), that are considered very important. The general perception is that such journals have a very thorough selection process and what they publish is regarded innovative and important for the profession. There are also a number of highly reputable field journals that are regarded as instrumental in developing certain areas of economics (examples are the Journal of Labor Economics, or the Journal of Econometrics). They typically address more specialized readerships, but are often of very high quality. In addition, there are a number of top-journals from adjacent fields that are very influential (for example, the Journal of the American Statistical Association, JASA).</p>
+<p>Quality and importance of journals in economics are correlated with abstraction level. But even here there are important differences. For instance, papers in JASA, the RES or Econometrica will often contain lots of mathematical theory, whereas the JPE or the QJE are more likely to combine economic intuition or empirical data work with economic theory. Recent years also have seen a number of new journal releases, and established economic societies (for example the Econometric Society or the American Economic Association) have turned to publishing a range of journals covering much more than their traditional flagship journals.</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="publishing-process" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="publishing-process"><span class="header-section-number">4.3</span> Publishing Process</h2>
+<p>As a student you should be aware of some of those general differences and it should be clear to you that only a tiny fraction of unpublished working papers ever makes it to the big five.</p>
+<p>Economics publishing is characterized by considerable publication lags, and it may take many years before a good paper is being seen in print. This is due to a lengthy peer review process: several anonymous referees are being asked to critically assess work that is submitted to a particular journal, and they often come with a lengthy list of demands that authors should satisfy in a next round of revision, for a number of iterations. Top journals reject 95-98% of all submissions.</p>
+<p>So what we find in published work is often ‘old’ work. Do not discount its value because of this, but be aware that much interesting recent work is not yet published. In order to get some idea of the general quality of working papers, you may use other indicators, in particular the general reputation of the working paper series (examples are NBER, CEPR, IZA, or major universities and graduate schools) or the reputation of the author (or the number of citations). There are, in addition, papers that float around that have not made it into a working paper series. Many researchers post their preliminary version on their webpages. Such work is often very good, but we need some more care in assessing the quality.</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="reading" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="reading"><span class="header-section-number">4.4</span> Reading</h2>
+<p>Much more directly relevant than an assessment of whether a particular paper has made it to a good journal is the question whether its contents are speaking to your topic. That means you need to identify the key contributions for your topic. This is your task to find out. In many cases (maybe not in all), key papers will have been published in high-level outlets, however. Yet, while you might be tempted to cite articles in journals sporting a high level of technical sophistication, be aware that it is your task to write a text whose argument you can understand and explain. It will sometimes be quite hard to read technical papers, and you should then be careful with your citations.</p>
+<p>Sometimes, entry level journals can provide for a very good read. One example is the Journal of Economic Perspectives (JEP). It tends to cover very topical social issues that economists address, it often avoids or reduces to a minimum the use of mathematical notation, and at the same time it strives to be taken seriously by professionals. Some JEP papers can serve as a role model for your thesis.</p>
+<p>Another good starting point are surveys. Good surveys often try to condense large strands of literature to a manageable number of pages. In some sense, this is also part of your task when writing a Research Project paper. Professional surveys sometimes try to be comprehensive and can be hard to read (consider those in the various Handbook of Economics series (published by North-Holland/Elsevier), that cover large subfields). The Journal of Economic Literature regularly publishes surveys, so does the Annual Review of Economics and the Journal of Economic Surveys. All address the professional reader. Recent and good surveys help getting a good grip on what contributions are deemed important in a field.</p>
+<p>Reading is a process, and you should take notes in one form or other. Try to extract the specific value of a paper to your research question, and take a note of it. Consider as a model a paper’s short abstract. The author tries (often in under 100 words) to distill the essence of years of hard work and signal to the readership what the contribution is. You might also write abstract-type notes, but instead of repeating what the author says is worth taking away from it, write down in how far the paper helps you in developing your own argument.</p>
+<p>You can do this for a couple of dozens of papers, the exact number depending on the requirements (breadth and depth) of your topic, and of your own choice. Typically, you will read more than you ever cite, and you will browse a lot more than you ever read. However, consider the time pressure that is on you. You will face important trade-offs, since every hour spent reading cannot be spent on something else (data work, estimation, sketching a theory, making graphs, taking analytical derivatives, thinking, pondering, playing football, etc.).</p>
+<ul>
+<li>Try to prioritize reading early on in the process and develop ideas on the go.</li>
+<li>Discard references that are of only marginal interest or impossible to understand.</li>
+<li>Do not spend more than a couple of weeks on core reading activities, but do keep consulting additional literature as you develop your argument in a certain direction.</li>
+<li>Reread some sources at preparing final stages of your work and see if their contents are adequately reflected in what you write.</li>
+</ul>
+<!-- SubSection........................................................ -->
+</section>
+<section id="academic-writing" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="academic-writing"><span class="header-section-number">4.5</span> (Academic) Writing</h2>
+<p>As much as reading, and probably more, writing is a process. It requires creativity. It requires effort. You will have to go over your text again and again. You will need to be open to new ideas from reading, from feedback from your supervisor or from group discussions. The academic bit of the writing process is to show a critical attitude to own and others’ work. We illustrate below in <a href="#sec-disc" class="quarto-xref">Section&nbsp;7.3.4</a>.</p>
+<p>More generally, the point of writing is to bring out <em>your</em> ideas to <em>your</em> audience. This involves that next to being good in the language you use (<a href="#sec-lang" class="quarto-xref">Section&nbsp;6</a>) and employing a helpful layout (<a href="#sec-layout" class="quarto-xref">Section&nbsp;9</a>), you should show that you master the subject and that you know what you are talking about. You need to convince your audience of the point you are making.</p>
+<p>The piece that you produce should not dwell long on material that is available in standard textbooks. The point of your writing is to produce something new, not available in textbooks. Your text ought to make this clear.</p>
+<p>The final product that you produce should bear characteristics of a ‘good paper’. In order to develop some intuition on what a good paper looks like, you might want to take some papers that you have read in the past and ask yourself which of those</p>
+<ul>
+<li>make a very transparent argument and clearly develop the flow of that argument</li>
+<li>make very informative use of tables and figures and other elements</li>
+<li>bring clearly out the intuition in the argument and make a clear connection between the methodology used or developed and the core point that one can learn from the paper.</li>
+</ul>
+<p>A possible way to achieve gaining an understanding for what makes a good paper is to organize a meeting with a few fellow students and discuss with each other which papers you consider good in any of those aspects. Occasionally, supervisors may also be involved in this process.</p>
+<!-- SECTION ********************************************************** -->
+</section>
+</section>
+<section id="sec-soft" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Software</h1>
+<div style="display:none">
+<span class="math inline">\(\nextSection\)</span>
+</div>
+<!-- SECTION ********************************************************** -->
+<p>The MSc program has no specific software requirements: use your freedom wisely.</p>
+<!-- SubSection........................................................ -->
+<section id="word-processor" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="word-processor"><span class="header-section-number">5.1</span> Word Processor</h2>
+<ul>
+<li>The final piece of text may have to be handed in in .pdf format; hand in a single document; use standard fonts to make sure that all characters are rendered correctly by the .pdf software (also applies to power point presentations).</li>
+<li>For larger projects, consider what writing and organizing support your software may offer.</li>
+<li>Many authors use Microsoft Word as a word processor. It has many features that help writing clear and good papers; it is very easy and intuitive to use, bits from other software can often just be copied and pasted into the document. However, overuse of its many built-in features may lead to cluttered and not-so-readable end products; use those features carefully (similar remarks apply to power point slides).</li>
+<li>An alternative is LaTeX (a freely downloadable product), popular because of (i) rendering and handling mathematical formulae (see the example equation <span class="math inline">\(\eqref{eq:1}\)</span>), (ii) automatic reference management (bibliographies and citation), (iii) full control of all parameters, (iv) simplicity in appearance, (v) all files are plain text files viewable with <em>any</em> editor. It may take some time to learn using it, and is not always convenient (e.g., when producing tables and figures). See item 4 in <a href="#sec-links" class="quarto-xref">Section&nbsp;11.2</a> for locally installable and online implementations.</li>
+</ul>
+<!-- SubSection........................................................ -->
+</section>
+<section id="statistical-and-mathematical-software" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="statistical-and-mathematical-software"><span class="header-section-number">5.2</span> Statistical and Mathematical Software</h2>
+<ul>
+<li>Mathematical work can be supported with using expert analytical software, such as available through the Wolfram Alpha website, or the software tool <span class="smallcaps">Mathematica</span> (which may or may not be available on Campus computers).</li>
+<li>For doing empirical work, use whatever software is appropriate, available, convenient, or recommended by your supervisor.</li>
+<li><span class="smallcaps">Stata</span> is a statistical software package that is widely used in the economics research community. It combines many features of an expert software package such as pre-programmed estimation commands with free programmability by the user. A simple internet search will return many user-friendly introductions to <span class="smallcaps">Stata</span> (at various levels of expertise). See item 6. in <a href="#sec-links" class="quarto-xref">Section&nbsp;11.2</a>. In addition, .pdf manuals are available directly from the help function in the <span class="smallcaps">Stata</span> menu.</li>
+<li>There are many other mathematical and statistical packages and programming languages that some students and/or supervisors may be familiar with (<span class="smallcaps">Matlab</span>, <span class="smallcaps">Ox</span>, <span class="smallcaps">R</span>, <span class="smallcaps">SPSS</span>, to name a few), but those will find less than universal support within our program and require a higher degree of self-sufficiency from the students.</li>
+</ul>
+<!-- SECTION ********************************************************** -->
+</section>
+</section>
+<section id="sec-lang" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Language and Style</h1>
+<div style="display:none">
+<span class="math inline">\(\nextSection\)</span>
+</div>
+<!-- SECTION ********************************************************** -->
+<blockquote class="blockquote">
+<p><q>Good writing is hard to define. Bad writing is easy to spot.</q></p>
+<div class="flushright">
+<p>Karl Whelan.<br> University College Dublin</p>
+</div>
+</blockquote>
+<p>The point of writing text is to transmit your ideas to the reader. This needs to be done with care, clarity and in an organized manner. Use simple and correct language, and short sentences.</p>
+<!-- SubSection........................................................ -->
+<section id="english" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="english"><span class="header-section-number">6.1</span> English</h2>
+<p>You write all text in English. This may or may not be your native language, but you must take care to write error-free, to use correct grammar and appropriate choice of words. This is necessary, because a text with errors, even simple typos may give rise to misunderstanding and ambiguity. In addition, sloppiness makes a text unpleasant to read and distracts from the content.</p>
+<p>Use a spell-checker and other software tools that your software may provide, but do not rely blindly on them. Use judgment when the software suggests changes. There are numerous language tools available also on the internet. There are various incarnations of English, each with their own spelling and grammar rules. Use either British or American English, but try to be consistent (example: <em>labor</em> vs.&nbsp;<em>labour</em>, <em>the police are</em> vs.&nbsp;<em>the police is</em>, etc.). See item 5. in <a href="#sec-links" class="quarto-xref">Section&nbsp;11.2</a>.</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="academic-writing-style" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="academic-writing-style"><span class="header-section-number">6.2</span> Academic Writing Style</h2>
+<p>Scholarly works must be precise, including in the choice of words. Precision can also extend to giving definition. Where necessary, define important terms and concepts, and consider indicating the source of the definition. This may be appropriate when those terms and concepts are not entirely standard for your audience. Make sure to use terms, concepts and key words consistently. Precision also extends to being quantitatively precise, where relevant. If you have estimated the effect of A on B, exactness would imply to write ‘the outcome variable increases by 17 percentage points’ instead of ‘the outcome variable changes quite a bit’. Diligence also extends to formulating with care. There are (not so subtle) differences between saying ‘A suggests’ or ‘A shows’ or ‘A proves’ or ‘A surmises’.</p>
+<p>Academic writing also strongly preserves logic. If you write ‘A has something to do with B’, then you are not only imprecise, but you also compromise logic. It may be more suitable to use one of: ‘A results from B’, ‘B is an element of A’ or ‘A frequently occurs together with B’. Logic also extends to the structure (sectioning) of the text, supporting the train of thought and development of the main argument.</p>
+<p>What you write has meaning, and writing style helps conveying this meaning. It is therefore important to first get organized on what you want to write. Your text should then develop logically and sequentially between sentences and between paragraphs. Make sure that you do not have gaps in your line of argument. Such gaps can occur when you re-order bits of text while reviewing and editing. Hence, it is advisable to go through the text several times and check that the logic is still preserved.</p>
+<p>Sentences should be short and not contain too much information. Simple (not simplistic) language often reads better. In the interest of clarity, it is often advisable to reduce the use of subclauses, parenthetical arguments, and other complex constructs to a minimum. Overcomplicated sentences can be difficult to read and confusing for the reader. Convey single ideas in your sentences. Avoid vagueness, redundancy, tautology, and inappropriate use of jargon. Avoid, remove, or reduce the usage of fill-words such as ‘however’, ‘basically’, ‘nonetheless’, etc.</p>
+<p>Of course, to make things really complicated now, you may want to keep in mind that you aspire to engage your reader so he or she keeps reading. The text should be compelling. There are certain tricks that can be used effectively. A simple one is to use synonyms of frequent terms to reduce monotony in the text flow. To further increase variation, consider having a shorter sentence follow a longer one to create impact as it attracts the reader’s attention and emphasizes the importance of the information conveyed. Got it?</p>
+<p>There are numerous style guides available; also on the internet. We strongly recommend having a look at the excellent writing guide of the University of Toronto, see item 7. in <a href="#sec-links" class="quarto-xref">Section&nbsp;11.2</a>.</p>
+<!-- SECTION ********************************************************** -->
+</section>
+</section>
+<section id="sec-content" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Content</h1>
+<div style="display:none">
+<span class="math inline">\(\nextSection\)</span>
+</div>
+<!-- SECTION ********************************************************** -->
+<p>Contents are your responsibility. Here are some non-exhaustive, general and generic suggestions. Some more specific aspects for empirical work is relegated to <a href="#sec-emp" class="quarto-xref">Section&nbsp;8</a>.</p>
+<!-- SubSection........................................................ -->
+<section id="sec-rp" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="sec-rp"><span class="header-section-number">7.1</span> Research Project</h2>
+<p>Introduce the (general) topic and motivate why it is interesting. Then make an argument that you need to look at details, and at which details. Try to get the reader’s attention. The opening paragraphs are often the place to refer to things that are generally known, or to provide some rough numbers and illustrate a certain problem.</p>
+<p>Then work towards formulating a clear research question that is embedded in the context you just introduced. In so doing, make clear why the research question is interesting, and what can be learned from it. (Ask yourself: who wants to know and why?). Note that ‘formulating a research question’ does not literally imply or require to state: ‘The research question of my paper is: what is the effect of X on Y?’, possibly with textual emphasis (such as bold face or on a separate line); no published paper features such choice of wording or emphasis.</p>
+<p>Then, make clear how others in the field think about it. What has been done in the literature, what are the big related contributions, and how have they addressed similar issues? What were their main findings? Keep this brief in the introduction, elaborate in more detail later.</p>
+<p>Make clear what you add. Write your piece with the attitude that you contribute something to the literature. Even in a Research Project, where you partly summarize other people’s work, realize that the reason for writing this up in the way you do must be that the same summary is not available elsewhere (if it were, it would either be inefficient duplication of effort or no effort at all).</p>
+<p>Explain what main references exist and what problems they address. The papers you discuss will all be closely related, so it is important to bring out the differences. Avoid just listing papers as in the following:</p>
+<ul>
+<li>White (1970) considered the problem of …. He used data from …. He found …</li>
+<li>Black (1971) expanded on White (1970) by introducing …. He used data from …. He found …</li>
+<li>Green (1992) considered the problem of …. He used data from …. He found …</li>
+</ul>
+<p>This is boring and not even half of the work. Avoid bulleted lists anyway.</p>
+<p>Instead, consider grouping by subtopic: Green’s (1992) methodological contribution to the analysis of … was that …. This aspect, while acknowledged potentially important by White (1970) and Black (1971), was innovative as it for the first time introduced the use of higher order spatial thermodynamics into general equilibrium models. Purple (1982) on the other hand, branched off from White (1970) and Black (1971) by discussing the relevance of … in the context of ….</p>
+<p>Since the space is limited, and you may want to go deep enough, it is a good idea to focus the discussion on a set of, say, four core contributions (it may vary by topic whether the number is perhaps better three or five). It is then of interest to provide sufficient detail about each of those and clearly work out in how far they differ and why. You may want to have another set of related papers that you also incorporate in your review, albeit at a level of lesser detail. Perhaps a good number to shoot for is to include at least ten overall relevant references. Next to those, there may be ancillary references that you cite for good order. 20 in total seems a reasonable upper limit.</p>
+<p>The upshot is that there will be no need to be entirely comprehensive and to cover everything that is somehow related. However, turning the viewpoint around, you may be able to say that if the reference list gets too long, your topic may also be too broad. If the reference list is too short, the question that you ask is perhaps(?) too narrow.</p>
+<p>There will be returns to being critical (what do we really learn from other papers? what is it that we don’t know yet?), to being original (is your review sufficiently differentiated from other available reviews and surveys?), and to being ambitious (did you read and understand high-level publications?).</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="sec-pspb" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="sec-pspb"><span class="header-section-number">7.2</span> Policy Seminars &amp; Policy Brief</h2>
+<p>Please consult the information posted on Canvas for this course.</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="thesis-1" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="thesis-1"><span class="header-section-number">7.3</span> Thesis</h2>
+<!-- SubSection........................................................ -->
+<section id="introduction" class="level3" data-number="7.3.1">
+<h3 data-number="7.3.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">7.3.1</span> Introduction</h3>
+<p>Much of what has just been said about the introduction for the Research Project also applies to the Thesis.</p>
+<p>In formulating your research question, think of something that is both focused and interesting or relevant for a large enough audience. Over and above (a short and formal) review of related literature, the thesis needs to show evidence of substantive own work on the topic. If possible, show the ambition that you want to do something new, in the sense that the same thing is not already available elsewhere. Where appropriate, formulate one or two subquestions that you address. (Again, not necessarily ‘questions’ with a question mark.)</p>
+<p>You do not need to push the research frontier. But it should become apparent that you have made a serious attempt at adding a little extra that cannot be found in exactly the same way elsewhere. For instance, you use data from a different country, or period, or use a methodology that has been popularized in one area in a slightly different area.</p>
+<p>Replication exercises are often useful, and may be appropriate for your topic. These days, many journals have webpages with supplementary material on published articles, including, in many cases, empirical data. You might use those data and see if you can replicate the author’s reported findings with your own effort. You might investigate if the results are robust to using different methods. You might investigate if a model can be simplified and tweaked into a little different application.</p>
+<p>Very ambitious students even show innovation in their work. Of course, you shall always ‘stand on the shoulders of giants’, and you have to make sure that the question you address is researchable in the end. The introduction should therefore also stress the contribution of your work to the existing literature. In addition, you may want to preview your main findings.</p>
+<p>Thesis work will have several sections in the main body of the text. Examples are Literature Review, Data Sources, Descriptives, Empirical Strategy, Research Methodology, Economic Model, Results, Sensitivity Analysis, Discussion. Which of those you use exactly will depend on your topic. In general, the choice of sections and their order should be guided by the development of your argument and help the reader to follow through until your conclusions.</p>
+<p>You can close the introduction with a short paragraph on what else you do in the rest of the paper: ‘Section 2 reviews related literature, section 3 introduces the model, section 4 explains what data I use,’ etc. Doing this is customary in scientific papers (although sometimes the value added of such a paragraph is not clear, so you may skip it).</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="literature-review" class="level3" data-number="7.3.2">
+<h3 data-number="7.3.2" class="anchored" data-anchor-id="literature-review"><span class="header-section-number">7.3.2</span> Literature Review</h3>
+<p>Conceptually, a literature review in the thesis is similar to what can be found in the Research Project paper, and many of the points mentioned before also apply here. However, keep it short, so copy &amp; paste will not do, even if you are working on a closely related topic.</p>
+<p>The literature review should be targeted to your topic. Include the relevant references, the key articles that speak to your specific topic. The review of literature should be well-organized around important research aspects, and embed your own research question. Once you have properly shown what others have done, it will be easier to comprehend what your own research contribution will be.</p>
+<p>Also, move away from the idea that a literature review is a closed chapter among many in the thesis. References to other people’s work will appear in many instances and sections, and ideas brought to you from reading other authors’ work will be reflected in all you write throughout your thesis.</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="approach-design-methodology" class="level3" data-number="7.3.3">
+<h3 data-number="7.3.3" class="anchored" data-anchor-id="approach-design-methodology"><span class="header-section-number">7.3.3</span> Approach, Design, Methodology</h3>
+<p>The main work of a thesis and the bit that will attract most attention from an evaluator are the approach chosen, the analysis performed, and the interpretation of the results that were obtained.</p>
+<p>To start with the approach, it needs to be suitable for your problem. Consider that it may be appropriate to first motivate why you chose this methodology and not another. Explain your approach carefully, certainly if it is not entirely standard. Do not assume that the reader is already familiar with it. Provide precise references for the reader to consult.</p>
+<p>Convince your reader that you made the right choice. Different ways of doing things have their advantages and drawbacks. If you have data to work with, what data did you choose, and why? What are the particularly strong points of your data in light of your research? Has the data been available before you set out to do your research, or did you have to collect them yourself? What modeling tools do you choose, and why those and not others? Can an interested reader replicate what you do? Do you provide help to accomplish this by documenting data source or model solutions?</p>
+<p>The analysis performed should in the end convince the reader of the argument in your paper. This involves in the first place, that there should be no analytical errors. If you make mistakes, fix them. If you cannot fix them, simplify your approach. While complexity, if appropriate, can earn you high grades, it may just be in the way of feasibility and your own understanding. If in doubt, then go for safer options, do something less challenging, but conduct your analysis well. If you use data, the reader will be more easily convinced when you have made good use of the information available to you (the reader might ask, for instance: Does there remain omitted variable bias? Is the sample selection appropriate?).</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="sec-disc" class="level3" data-number="7.3.4">
+<h3 data-number="7.3.4" class="anchored" data-anchor-id="sec-disc"><span class="header-section-number">7.3.4</span> Results, Interpretation, and Discussion</h3>
+<p>You may want to know whether your results are valid and robust. Consider specification tests, model simulations, or model testing under alternative assumptions. Investigate to what extent results are fragile. It is much better to do a thorough analysis and report, for instance, that the results change with a change of methodology or assumptions rather than not reporting this. If the results change, try to explain why.</p>
+<p>Sometimes results don’t come out the way you expect. This can mean either that somewhere something is not quite right (after all, you or your supervisor noticed that something is unusual), or that the result is what it is. The scientific publication process is sometimes said to be subject to a publication bias—results that are not ‘interesting’ will not be published. You should not worry about this (after having excluded the possibility that you made mistakes). It is better to consistently show that an expected result is not there, than tweak the data or the model in such a way as to fit your story.</p>
+<p>Results need to be ordered, described, and interpreted. This should be done with some thought. If you have a number of alternative results that you wish to present and discuss, can you tell which of them are the most credible ones, and why? The findings should be interpreted carefully. Simulation can possibly be helpful here.Take good care that you understand the magnitudes you report (e.g., are they percentages or percentage points, marginal effects, elasticities, semi-elasticities?). Put those magnitudes in context. Are your numbers much higher or lower than what other people report? Why? What do the results tell you about your research question? What do they say about the approach, or the model you use? Are the data reliable or troubled by measurement error? Is your model perhaps not able to pick up some detail that you might want to care about?</p>
+<p>Think carefully through the implications of your findings, and link them back to the original research question. It is also important to discuss the limitations of the analysis and how these may affect the findings.</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="conclusions" class="level3" data-number="7.3.5">
+<h3 data-number="7.3.5" class="anchored" data-anchor-id="conclusions"><span class="header-section-number">7.3.5</span> Conclusions</h3>
+<p>Moving on to the conclusions, it is customary to first briefly summarize what question you asked, and how you answered it. Tell again how it relates to some of the literature and how you contribute. Stress the novelty in your piece. Recall your main findings that the reader should remember. Do not introduce substantially new information at this stage.</p>
+<p>What you have analyzed may be very specific. Yet, it is possibly a piece in a large jigsaw puzzle. Sketch for what other, possibly wider questions or applications your results are useful. You may want to think of policy implications or the use of your findings for society (or parts thereof). You can also think of possible future extensions, questions that are equally pressing and related but not yet answered, or aspects of methodology and theory development, etc.</p>
+<!-- SECTION ********************************************************** -->
+</section>
+</section>
+</section>
+<section id="sec-emp" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Specific Examples Relating to Empirical Economic Work</h1>
+<div style="display:none">
+<span class="math inline">\(\nextSection\)</span>
+</div>
+<!-- SECTION ********************************************************** -->
+<p>Some students prefer to do modeling work, involving the specification of some agents’ objectives and the constraints they are facing, and a set of interactions between agents, possibly aggregated, to arrive at equilibria that can be studied. Such modeling may involve calculus, it may involve simulation using a computer, or it may involve game theoretic solution concepts. <span class="citation" data-cites="varian1998">Varian (<a href="#ref-varian1998" role="doc-biblioref">1998</a>)</span> is a short piece of advice geared at PhD students (with an emphasis on producing novel and publishable work), but also theory-inclined MSc students in economics can benefit from having a look.</p>
+<p>Many if not most theses in Economics will involve empirical work using economic data. This often goes beyond illustrative and descriptive presentation, and in many cases serious econometric work is being delivered. It is generally not easy to comprehensively address all aspects that may be relevant in the presentation of empirical work, but we can give some hints on more or less specific aspects. Some of this section may require a little understanding of econometric parlance. <span class="citation" data-cites="cochrane2005">Cochrane (<a href="#ref-cochrane2005" role="doc-biblioref">2005</a>)</span> —writing for an audience of PhD students in (empirical) finance—gives some further useful hints that can be of help to MSc students in economics as well.</p>
+<!-- SubSection........................................................ -->
+<section id="empirical-methodology" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="empirical-methodology"><span class="header-section-number">8.1</span> Empirical Methodology</h2>
+<p>Choice of empirical methodology will strongly depend on the question asked, the data used, but also be a matter of preference and reflect a trade-off of pros and cons. Since there is a near-endless set of possibilities, we give but a few examples.</p>
+<p>Alternative statistical or estimation approaches may sometimes give similar, and sometimes very different answers. Each method will have its specific advantages and drawbacks (or, have specific small- or large-sample properties). Underlying the appropriateness of method choice is oftentimes the answer to the question whether certain assumptions that an estimator makes are met by the data or specification. Some of this can be tested, other assumptions must be maintained.</p>
+<ul>
+<li>In descriptive statistics, the Kolmogorov-Smirnov test is a nonparametric test that compares, say, two samples of data, based on empirical distribution functions. It can also be used for testing specific hypotheses, such as normality of a sample.</li>
+<li>Panel data models often come in two flavors: individual fixed effects or individual random effects. A Hausman test is a standard approach to formally test whether the approach using milder assumptions (fixed effects: correlation with other regressors is admissible) is to be preferred over the approach that has more desireable properties (random effects: efficiency) but is only valid under more stringent assumptions (correlation with other regressors is not admissible).</li>
+<li>In an instrumental variables setting, a valid instrument for an endogenous variable needs to be correlated with the instrumented variable, but uncorrelated with the error term in the instrumenting equation. The correlatedness needs to be sufficiently strong, and can be ascertained using an F-test. If there are overidentifying restrictions, a J-test (or Hansen/Sargan test) can be used to assess the validity of the instrument set. The uncorrelatedness with the error cannot be tested, however.</li>
+<li>Nested specifications obtain when in a general model some parameters are restricted to be zero (or some other fixed and known value). In a maximum-likelihood setting, such restrictions can be tested using LM, LR or Wald tests.</li>
+</ul>
+<p>This short and by no means exhaustive list may suffice to illustrate that specification tests can be meaningfully employed to assess the overall quality (in terms of internal validity) of the empirical work delivered.</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="interpretation" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="interpretation"><span class="header-section-number">8.2</span> Interpretation</h2>
+<p>Interpretation of results strongly depends on the method chosen. Again, we can use some examples for illustration.</p>
+<ul>
+<li>In a probability model, the substantive question of interest is often: what is the effect of variable <span class="math inline">\(x\)</span> on the probability of event <span class="math inline">\(y\)</span> happening? In other words: if we change regressor <span class="math inline">\(x\)</span> marginally, what is the effect of that marginal variation on the probability of the outcome, or what change in probability does it imply? The answer to that question will depend on the functional form of the probability model. In a linear probability model, this marginal effect simply coincides with the estimated coefficient on <span class="math inline">\(x\)</span>—unless you use a function of <span class="math inline">\(x\)</span>, such as a polynomial.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> In a nonlinear probability model, such as a probit, this will not be true.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> We may want to look up what possibilities our econometric software offers in such cases to calculate marginal effects, and in the worst case calculate them by hand or numerically. We are interested in them simply because they are easier to interpret.</li>
+<li>In a choice model with multiple possible outcomes (say, choice of transport mode), we may, instead of reporting coefficient estimates or marginal effects, resort to reporting odds ratios when regressors are binary (say: male/female, or big/small). They are often convenient to calculate from coefficient estimates and may have an interpretation that is more accessible than that of the coefficient estimate.</li>
+<li>In a regression discontinuity design, we estimate a local effect at the threshold of a forcing variable. This is very different from a global estimate that is obtained from all sample observations. It may just be what we are interested in, though, because we believe that the threshold value separates a treated from an untreated group, and the local effect at the threshold then is an estimate of a treatment effect.</li>
+</ul>
+<p>Again, these are but a few examples. Consult a good book on econometrics for your specific application.</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="documentation-and-replicability" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="documentation-and-replicability"><span class="header-section-number">8.3</span> Documentation and Replicability</h2>
+<p>We mentioned elsewhere that replicability of research is a core principle of scientific endeavor, and according documentation is a badge of good and responsible authorship. You do not want to make unsubstantiated claims that are based on fabricated data, or find yourself in a position of not being able to repeat yourself what you did when producing results tables, even though you may be perfectly honest about it. A third person must in principle be in a position to redo your analysis if they have access to your data. So do give sufficient detail on your model specification and parameter choice. Not every minute aspect will need to be fully reported, but the really bare-bone necessary information should be given (and be it in a table note).</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="data-sources" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="data-sources"><span class="header-section-number">8.4</span> Data Sources</h2>
+<p>Economic data can be retrieved from many sources, from statistical offices (national ones, or Eurostat), international organizations, and websites of individual researchers. There are bith macro and micro economic data sets available from many sources, partly also available to students. The overiew of research data at the EUI Library in Florence is highly recommended. In addition, many journals make data used in published articles available for replication purposes. The university may offer additional help to identify and use data sources, or your supervisor may know how to obtain data for your specific topic. Note, however, that if you intend to use a data source that is not publically available, getting access may or may not work for you, or may involve considerable effort and preparation, possibly even money. See item 8. in <a href="#sec-links" class="quarto-xref">Section&nbsp;11.2</a>.</p>
+<!-- SECTION ********************************************************** -->
+</section>
+</section>
+<section id="sec-layout" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Layout</h1>
+<div style="display:none">
+<span class="math inline">\(\nextSection\)</span>
+</div>
+<!-- SECTION ********************************************************** -->
+<p>Layout is important in that a clearly written text with clearly readable tables, figures, references, footnotes and cross-references makes a text easy to read, understand, and navigate. Consistency in layout is appropriate and required. Spending a little effort on layout signals that you care about the text (even if your grade is mainly based on the content). However: form follows content.</p>
+<!-- SubSection........................................................ -->
+<section id="cover-page" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="cover-page"><span class="header-section-number">9.1</span> Cover Page</h2>
+<p>The document must have a separate cover page. See the Manual for an example. The cover page is not listed in the table of contents and does not count as a page (it also does not display a page number).</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="title" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="title"><span class="header-section-number">9.2</span> Title</h2>
+<p>The title is the first and most salient piece of information that potential readers receive about your work. The title should be short and descriptive and signal to the readership what the paper is about. Some will prefer to work with a subtitle to add specificity, and some may use the title to attract attention and choose a ‘catchy’ phrase. Yet, make sure that in combination with the subtitle the title unambiguously conveys the content of the paper. Example: Akerlof’s celebrated ‘The Market for Lemons: Quality Uncertainty and the Market Mechanism’, catchy but informative.</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="table-of-contents" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="table-of-contents"><span class="header-section-number">9.3</span> Table of Contents</h2>
+<p>In a thesis, you might consider including a table of contents. The purpose of a table of contents is to give the reader an immediate, general overview of the substance and structure of the paper, and to find particular sections quickly using page number indications. The table of contents should appear immediately after the cover page.</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="sectioning" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="sectioning"><span class="header-section-number">9.4</span> Sectioning</h2>
+<p>The final product needs to have a clear structure, so section and subsection headings should possibly be numbered. If there are no numbers, then the header style should indicate the hierarchy level (e.g., sections in large bold font, subsections in smaller bold font, or italics).</p>
+<p>Use sectioning wisely: there is no point in using section numbers like 2.3.1.2 in a 10-page report. Use the following maximum section depth as a (rough) guideline.</p>
+<ul>
+<li><p>Research Project: 2 (i.e., 2.1 is okay, 2.1.4 may not be); section numbering is optional.</p></li>
+<li><p>Master Thesis: 3 (i.e., 2.1.4 may be okay, 2.1.4.2 may not be); section numbering is typically appropriate.</p></li>
+</ul>
+<p>The standard structure is as follows</p>
+<ul>
+<li>Front Matter (title, preface and acknowledgement, table of contents)</li>
+</ul>
+<ol type="1">
+<li>Introduction</li>
+<li>Main Section 1</li>
+<li>Main Section 2</li>
+</ol>
+<ul>
+<li>etc.</li>
+</ul>
+<ol start="6" type="1">
+<li>Conclusions</li>
+</ol>
+<ul>
+<li>Bibliography (Reference List)</li>
+<li>Tables and Figures</li>
+<li>Appendices</li>
+</ul>
+<!-- SubSection........................................................ -->
+</section>
+<section id="flow" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="flow"><span class="header-section-number">9.5</span> Flow</h2>
+<p>Text flow is important to convince the reader, and to keep his or her attention. You write a text, you do not deliver a collection of graphs, tables and equations. That means that all diagrams and figures, tables and other non-text elements, ought to be only included to reveal additional information, to make a certain point. The flow of the text is determined by the logic of the argument. So, do include tables, diagrams, etc.&nbsp;to illustrate and make precise, but do not flush the reader with simply listing those. Do not include tables and graphs that you do not discuss. Discuss them briefly and to the point. Material that is not strictly needed to understand the flow of the argument, but is of a more documentary nature can be placed in an appendix.</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="equations" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="equations"><span class="header-section-number">9.6</span> Equations</h2>
+<p>Short equations can be embedded inside the text, as in the following example. Let <span class="math inline">\(Y_t\)</span> be GDP in current dollars, then define (nominal) GDP growth as <span class="math inline">\(\gamma_t \equiv \Delta \log{Y_t}\)</span> and real GDP growth as <span class="math inline">\(\rho_t\equiv \gamma_t-\pi_t\)</span> where <span class="math inline">\(\pi_t\)</span> is the rate of inflation. Longer formulae, or those that require large symbols should be shown in a separate line, <span class="math display">\[\begin{equation}
+\label{eq:1}
+\xi_t(s_t) = \int_{\Omega_{t-1}} \xi(s_t|s_{t-1})\xi_{t-1}(s_{t-1}) \mathrm{d} s_{t-1}.
+\end{equation}\]</span> Equations can be referenced. Use arabic numbers inside parentheses as shown above, and refer to them in the text as <span class="math inline">\(\eqref{eq:1}\)</span> or as Eq. <span class="math inline">\(\eqref{eq:1}\)</span>. Do not overuse numbering, so do not number equations that you never refer to again in the text. If you have formal proofs and longer sets of equations, consider collecting them in a separate appendix.</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="sec-tabs" class="level2" data-number="9.7">
+<h2 data-number="9.7" class="anchored" data-anchor-id="sec-tabs"><span class="header-section-number">9.7</span> Tables</h2>
+<p>Tables (and figures, <a href="#sec-figs" class="quarto-xref">Section&nbsp;9.8</a>) present summaries of data, not raw data themselves. Tables can be placed inside the text or collected at the end in a separate section. In particular in the latter case, it is important to refer to them by a number as in: ‘Table 5 shows …’. Apart from a number, a table should have a caption (‘headline’).</p>
+<p>Keep whatever you display in tables manageable for the reader to digest (in terms of numbers of columns and rows). Table contents should be self-explanatory and should add to the main line of argument. Tables should also not be too complicated to read.</p>
+<p>Table 1 shows unedited output of the software, simply copied and pasted into the text. The problem is that it contains too much information, and it is not very readable. Consider instead Table 2. It contains the same information<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> but the layout has been adapted to the purposes of clearly transmitting the information to the reader’s attention.</p>
+<div id="tbl-1" class="quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Table 1
+</figcaption>
+<div aria-describedby="tbl-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/table1.png" class="img-fluid figure-img">
+</div>
+</figure>
+</div>
+<p>Further table layout may be appropriate. Consider using table notes inside the Table (and use different symbols for Table notes than for footnotes, for instance, lower case letters as in example<span class="math inline">\(^a\)</span> or special characters as in example<span class="math inline">\(^\dagger\)</span> but do not mix them as we do in Table 2, and avoid cluttering). Table notes can also be used to make clear the source of the underlying data. If needed, table notes may contain additional explanation (for an extreme case of detail, see the tables in articles published in the Journal of Finance). Scientific publishing will try to avoid vertical separation lines as in Table 2 and only have single or double horizontal separation lines as in Table 3.</p>
+<div id="tbl-2" class="quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Table 2
+</figcaption>
+<div aria-describedby="tbl-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/table2.png" class="img-fluid figure-img" style="width:40.0%">
+</div>
+</figure>
+</div>
+<div id="tbl-3" class="quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: Table 3
+</figcaption>
+<div aria-describedby="tbl-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/table3.png" class="img-fluid figure-img" style="width:40.0%">
+</div>
+</figure>
+</div>
+<p>Table numbers may have an additional section indicator in case you use many tables in different sections. So, you might number them as ‘Table 3.1’ or ‘Table 4.2a’. Do this only if required by quickly navigating through the text.</p>
+<p>If you work with <span class="smallcaps">Stata</span> as your main tool for doing data work, you may want to make use of auxiliary routines that help ordering, say, regression output (e.g., <code>estout</code> or <code>outreg2</code>, see <a href="#sec-links" class="quarto-xref">Section&nbsp;11.2</a> item 6. for suggestions). But again, take the additional effort to produce a nice table rather than just a copy of output.</p>
+<p>Also make sure that tables are not broken across pages. The ‘need’ for this can easily appear to surface when you deal with long tables and want to insert them at a certain point in the text. If you do not see a way to fit the table entirely on the current page, you have essentially the following possibilities</p>
+<ul>
+<li>Move the table before the beginning of the first new paragraph on the next page. This has the slight inconvenience that readers need to flip pages.</li>
+<li>Move the table to a separate section in the appendix. You may want to consider doing this if you have more than one lenghty table. The advantage is that all tables can be found in one place and that, even if you expand or shorten the main body of your text, you will not get knock-on problems of tables that do not break well.</li>
+<li>Some tables will not fit on the page, even if you allow them to have a whole page on their own. There are small degrees of freedom to adjust margins, font size, and other editing parameters to make fit what otherwise does not, but all such changes interfere with and might actually compromise the legibility of your presentation. See, e.g., Table 4.</li>
+<li>Typically involving somewhat more work is the solution to properly break the table in two, with captions like ‘Table 5.1 <em>continued</em>’ (and perhaps a ‘<em>continued overleaf</em>’ on the preceding page). You should then also duplicate all column headers on the continuation table, else it becomes unreadable.</li>
+<li>Sometimes, authors suppress the display of auxiliary parameter estimates in regression tables. You want to indicate that you have taken into account various controls, but they are not in themselves of prime interest. Leaving them out from display makes the table much more readable and directs attention to what is actually of interest. See the example of Table 4.</li>
+<li>If you are tight in the column dimension of the table, make two tables out of one. The point of having tables with many columns is perhaps that they faciliate easy comparison across columns (models), but remember to keep the attention of the reader and not overwhelm him or her with lots of numbers.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<figcaption>Table 4</figcaption>
+<p><img src="images/table4.jpg" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<!-- SubSection........................................................ -->
+</section>
+<section id="sec-figs" class="level2" data-number="9.8">
+<h2 data-number="9.8" class="anchored" data-anchor-id="sec-figs"><span class="header-section-number">9.8</span> Figures</h2>
+<p>Figures contain data diagrams or graphs, maps or other visual summaries of data, algorithms, or models. When you want to present data in a diagram, choose the type of diagram wisely. For instance, a pie chart gives a direct visual impression of the distribution of a categorical variable, but is not suited for depicting, say, a time series.</p>
+<p>Figures should be treated like tables (in the text or at the end, but with sufficient information in the caption or in the note, including mentioning the source, numbered, self-explanatory, legible, and not overladen). In addition, figures should be clearly legible when printed black and white, so use a black and white color scheme as in the example of <a href="#fig-diagram" class="quarto-xref">Figure&nbsp;1</a>. Example: <span class="smallcaps">Stata</span> users can easily adjust the color scheme using the option <code>scheme</code>, as in</p>
+<pre><code>     `line y1 y2 y3 year, title("A B/W Diagram") scheme(s2mono)`</code></pre>
+<div id="fig-diagram" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-diagram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: <span class="math inline">\(\;\)</span>
+</figcaption>
+<div aria-describedby="fig-diagram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/figure1.png" class="img-fluid figure-img">
+</div>
+</figure>
+</div>
+<p>A good guide to presenting economic data in easy-to-read figures is <span class="citation" data-cites="schwabish2014">Schwabish (<a href="#ref-schwabish2014" role="doc-biblioref">2014</a>)</span>.</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="remark.-tables-and-figures-from-other-published-sources" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="remark.-tables-and-figures-from-other-published-sources">Remark. Tables and Figures from Other Published Sources</h2>
+<p>It is tempting to include tables and figures from other published sources, in particular since it appears time-consuming work to generate own tables and figures. Doing so needs a lot of care. First of all, proper attribution, and secondly, the contents must clearly fit exactly the story. This latter requirement means that in most cases existing tables and figures should not be copied, even if the source is mentioned. An additional aspect is that a table or figure from a publication may carry its own number which will not coincide with the sequence number in your own work.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We strongly discourage the practice of copying tables and figures from elsewhere.</p>
+</div>
+</div>
+<p>This most certainly applies to graphs taken from textbooks that illustrate the mechanics of a model. There is no good reason to assume those could not be redrawn by you. It may require some work, but it will make for a better product if tables and figures are created from original source data.</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="notation" class="level2" data-number="9.9">
+<h2 data-number="9.9" class="anchored" data-anchor-id="notation"><span class="header-section-number">9.9</span> Notation</h2>
+<p>There is no such thing as standard notation in economics. You should always define all symbols. To a chemist, H<span class="math inline">\(_2\)</span>O is a symbolic notation that has inherent meaning, due to a universal convention in the science of chemistry. This is absent in economics. For an example, consider the frequent use of symbol <span class="math inline">\(p\)</span> (price? probability? premium?).</p>
+<p>Likewise, acronyms should be introduced on first reference using the full name followed by the abbreviation in parentheses. Subsequent references should only use the abbreviation.</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="page-numbers-footnotes-referencing-and-citation" class="level2" data-number="9.10">
+<h2 data-number="9.10" class="anchored" data-anchor-id="page-numbers-footnotes-referencing-and-citation"><span class="header-section-number">9.10</span> Page Numbers, Footnotes, Referencing and Citation</h2>
+<p>Number all pages (except the cover page), starting at 1. Page numbers should be centered or at the right, on the bottom of the page. The table of contents and preface (if applicable) also do not get a standard page number (you could number those using, say, lower case roman numbers).</p>
+<p>Use footnotes wisely and sparingly.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> Consider merging footnote information into the main text by using parentheses (Cicero only used parentheses). As a rule of thumb, use on average not more than one footnote per full text page. Footnote numbers should appear after punctuation and be numbered consecutively using superscripted arabic numbers.</p>
+<p>Cite published (or unpublished) work by author name and year, as in Black (1976) or Black and White (1981). For sources with more than two authors use the ‘et aliter’ citation style (Brown <em>et al.</em>, 1999). Articles typically have not more than author and year indication, but (text)books and other very long treatises occasionally use explicit page or chapter referencing (Green, 2001, p.&nbsp;134; Purple, 2010, ch.&nbsp;17). If the author/year combination does not identify a work, add a letter to the year (<span class="citation" data-cites="aghion1998a">Aghion and Howitt (<a href="#ref-aghion1998a" role="doc-biblioref">1998a</a>)</span>).</p>
+<p>Use one-on-one referencing (every cited work needs to be found in the list of references at the end, every item in the list needs to be cited at least once in the text).</p>
+<p>For further useful hints and suggestions, see <a href="#sec-links" class="quarto-xref">Section&nbsp;11.2</a>, item 8.</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="quotes-and-emphasis" class="level2" data-number="9.11">
+<h2 data-number="9.11" class="anchored" data-anchor-id="quotes-and-emphasis"><span class="header-section-number">9.11</span> Quotes and Emphasis</h2>
+<p>Use quotes and emphasis judiciously. Most material can be condensed and expressed differently. The danger of using too many quotes (and it is difficult to give a precise upper limit) is that their use may compromise the quality of your writing. After all, you should show that you are able to express all thoughts, whether originally yours or somebody else’s, <em>in your own words</em>. This requires some creativity but also proficient language skills.</p>
+<p>If you use quotes at all, use only short ones of a few lines at most (see the example at the start of <a href="#sec-lit" class="quarto-xref">Section&nbsp;4</a> of this document). Quotations should be clearly visible as such, and quotes from printed publications should have precise reference information (e.g., a page number).</p>
+<p>Typically, quotations should follow the style and spelling of the original. If you add emphasis, add a note (e.g., ‘emphasis added’). If you leave out bits from the original, indicate ellipsis using dots in square brackets. In general, use emphasis in the text by <em>italic type</em>, <strong>never use bold type</strong>.</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="bibliography" class="level2" data-number="9.12">
+<h2 data-number="9.12" class="anchored" data-anchor-id="bibliography"><span class="header-section-number">9.12</span> Bibliography</h2>
+<p>The bibliography (a.k.a.&nbsp;reference list) follows after the main text and before the (optional) Tables and Figure section or Appendices. Use some coherent style that contains all necessary bibliographic information. While there is no required model, we suggest to use APA or Harvard style citations and reference lists (both are quite similar). The APA guidelines offer very comprehensive and specific suggestions for references. See <a href="#sec-links" class="quarto-xref">Section&nbsp;11.2</a> item 10 for more details. See <a href="#sec-refs" class="quarto-xref">Section&nbsp;11.1</a> for an example inspired, but not strictly following APA style, for commonly used publication types (journal articles, books, chapters in volumes, working papers, reports or unpublished material).<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
+<p>It is good practice to start using a coherent style right from the start of the process of writing, and to keep the format as it will appear in the reference list of the final product. This has a disciplining effect and reduces future cost of searching.</p>
+<p>There are different styles in use for producing bibliographies in published work. In keeping with APA style, we strongly suggest to order items by author last name (alphabetically) and year (ascending). Most journals publish several issues per volume, and one volume per year, with page numbers running consecutively within the volume and across issues. The point of a reference is to identify a work, so listing year, volume, and page number will suffice. But this is not always the case, and the reference may need additional information (e.g., the Journal of Economic Perpectives starts the page counter at 1 in every issue; the Brookings Papers on Economic Activity only have issue numbers, no volume indication).</p>
+<p>When citing material from websites, add a date of last access (but use such citations very sparingly, given the fleeting nature of material available on the internet). Reports available on websites in .pdf format can often be treated as standard publications, certainly if they have a date and an author/editor.</p>
+<p>Users of LaTeX may want to familiarize themselves with Bibtex or Biblatex, referencing and citation systems that read in the relevant (and actually cited) items from a data base. Here, the citation and bibliography style can follow commonly accepted standards. Citation keys (like Black (1996) or White (1969)) are generated inside the document and the bibliography is generated automatically. A similar possibility for working with literature data bases is offered by EndNote for users of, say, MS Word. See <a href="#sec-links" class="quarto-xref">Section&nbsp;11.2</a>, item 9. for links. Note, however, that you may first have to compile a reference data base yourself, which can be a time-intensive investment. For a short paper whose topic you will not touch anymore, such an investment may not be worth it.</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="appendices" class="level2" data-number="9.13">
+<h2 data-number="9.13" class="anchored" data-anchor-id="appendices"><span class="header-section-number">9.13</span> Appendices</h2>
+<p>Appendices collect additional, supplementary material that is not strictly needed to read the text, but that is needed for documentation purposes and that is helpful to the reader to understand some details when he or she wants to replicate the analysis (background information).</p>
+<p>For instance, you can include a lengthier mathematical derivation here, (sketches of) analytical algorithms, data descriptives, additional Tables and Figures that are not in focus in the main text, or use other elements of the research process that require documentation. Do not, however, use the appendix as a garbage dump.</p>
+<p>The layout in the Appendix requires the same care and attention as the entire main text. Use a different numbering style when you have more than one appendix or subsections inside the appendix (e.g., use uppercase letters as A.1 and B.2.1).</p>
+<p>All included appendices should also be referred to in the main text. Typically, such references indicate that consulting the material at that point is not strictly needed in order to understand the subsequent text (e.g., ‘a formal proof is delegated to Appendix A.1’, or ‘Appendix B.2 shows results obtained under the alternative assumption that …’.).</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="additional-elements" class="level2" data-number="9.14">
+<h2 data-number="9.14" class="anchored" data-anchor-id="additional-elements"><span class="header-section-number">9.14</span> Additional Elements</h2>
+<p>Each academic paper is different and despite standardization in terms of layout guidelines, there are degrees of freedom. Content and readability should determine the elements you use. Here are examples of optional elements:</p>
+<ul>
+<li><p>You may give a short abstract (of around two paragraphs), and a short list of key words (e.g., Economic growth, panel data, Bayesian games). <br> <br> Note that writing an abstract also requires care and attention. It should reflect, in a few words, the very essence of your research findings. Abstracts are the most commonly read pieces of academic work, so they need to reveal to an interested reader what the paper is about, without going into specific details, but stating the value of the study to the research community.</p></li>
+<li><p>You may want to provide acknowledgments to persons or institutions that were helpful to you in producing scientific work.</p></li>
+<li><p>In a final thesis, you may include a preface in case you have more people to thank (your mum or sweetheart for mental support, supervisor for patience, etc.). This goes on a separate page after the cover page.</p></li>
+<li><p>In a very lenghty document with a deeper level of sectioning, a list of contents at the beginning may be helpful (it typically is not, if you only work with a few section and subsection headings). If you provide a table of contents, you should provide associated page numbers as well.</p></li>
+<li><p>There is typically no index. You’re not writing a book.</p></li>
+</ul>
+<!-- SubSection........................................................ -->
+</section>
+<section id="length-and-format" class="level2" data-number="9.15">
+<h2 data-number="9.15" class="anchored" data-anchor-id="length-and-format"><span class="header-section-number">9.15</span> Length and Format</h2>
+<p>Whatever you have to say, keep it short. It is easy to write long texts. It is an art to write short texts with very dense information. But make sure that your arguments are understandable to the reader at first reading. Instead, economize on repetitions. General guidelines on length and format are set out in the Manual.</p>
+<!-- SECTION ********************************************************** -->
+</section>
+</section>
+<section id="sec-pres" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> Presentation and Discussion</h1>
+<div style="display:none">
+<span class="math inline">\(\nextSection\)</span>
+</div>
+<!-- SECTION ********************************************************** -->
+<!-- SubSection........................................................ -->
+<section id="purpose" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="purpose"><span class="header-section-number">10.1</span> Purpose</h2>
+<p>The purpose of the presentation is manifold. Formally, the program requires students to be proficient in expository presentation of their research findings to both expert and non-expert audiences, and presentation rounds are obvious points in time to check these requirements. In addition, the critical discourse involved in a public presentation may remove any remaining doubts about true authorship. Most important, however, are the elements of academic learning and dissemination of new knowledge.</p>
+<p>A good presentation is both engaging and clear, and stimulates academic interest and discussion. The presentation should therefore not be perceived as a burden, but rather as an opportunity to exchange ideas with others, and to receive hopefully interesting comments or questions that help you write a better paper.</p>
+<p>To achieve this, the presentation should make good use of presentation slides without distracting elements, and be supported by a free talk that follows the theme, taking the audience from the initial motivation and research question, through the argument of the paper, and towards conclusions. We mention three aspects that are worth keeping in mind when preparing a presentation: content, form, and style. What follows pertains to both Research Project and thesis (and perhaps more to the latter than to the former), we comment on some differences in <a href="#sec-presdiff" class="quarto-xref">Section&nbsp;10.6</a>.</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="content" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="content"><span class="header-section-number">10.2</span> Content</h2>
+<p>You have written a paper, and its contents define the point of departure for the presentation. Even though most of the content of the slides is based on what is in the paper, what you show will be quite selective as you want to focus attention on important parts.</p>
+<ul>
+<li>You present your paper to a specific audience that you may wish to convince of your case. While some may be eager to learn about the topic, others first need an appetizer to become interested. There are certain cues you can use in order to stimulate interest. What often works is to sketch a wider context, recall examples of (policy) debates featured in the media, or show interesting data patterns that call for explanation or attention. Such information, conversely, may not be of core interest in the paper and hence could only feature in the presentation.</li>
+<li>You may assume that everyone in the audience is familiar with the content of core courses of the program, but not everyone may be familiar with the specifics of elective courses. This means, you talk to your peers, but they may not be familiar with what you have learned. Some explanation will be appropriate. To do so, you could, for instance, refer to main literature, models or theories discussed in core courses if that helps you setting the stage: if you study search and matching models, put a couple of core references (e.g.&nbsp;by Dale Mortensen and Chris Pissarides) so that people in the audience immediately recognize the context.</li>
+<li>Do mention on one of your early slides what your contribution is to the specific debate, and why the audience should care to know. So, not only should it be clear what you will talk about, but also what motivates your approach and research question. Keep in mind: a question that is already answered is not of prime academic research interest.</li>
+<li>When discussing results, make sure to give the proper interpretation. For instance, empirical results can relate to coefficient estimates, to marginal effects of a variable on a (nonlinear) outcome, to elasticities, to odds ratios, or to other magnitudes. Provide the necessary context so your audience can judge how important (in a quantitative, or economic, sense) the effects are (over and above statistical significance). Do the reported effects have a causal interpretation, or should they be seen as correlations? The precise interpretation of theoretical results can likewise be non-obvious and may call for clarification (example: think of the interpretation of a mixed-strategy Nash equilibrium).</li>
+<li>Discuss, perhaps in a summary way: how robust are your findings? How good is your model? How precise and comprehensive is the data? Are there alternative explanations for the findings? If there are doubts, it may be appropriate to voice them.</li>
+<li>Work on conclusions and discussion. What do we learn from your efforts?</li>
+<li>Policy conclusions or research implications are in many cases a welcome and appropriate reflection of the author on what policy makers or other researchers can learn from the findings to either implement solution strategies for a given problem, or, conversely, what routes not to take. These implications should be derived from robust findings of the paper. It can also be interesting to take the implications a bit further and out of the very specific context and muse about where else the findings may be relevant.</li>
+</ul>
+<!-- SubSection........................................................ -->
+</section>
+<section id="form" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="form"><span class="header-section-number">10.3</span> Form</h2>
+<p>The slides should perhaps be seen as a separate type of medium, requiring separate layout and selection choices from the underlying paper.</p>
+<ul>
+<li>You have a limited time slot available for your presentation, and the number of slides needs to be chosen such that you can go through most of them without rushing.</li>
+<li>Many students prefer to use a ‘Table of content’ or ‘Overview’ type of slide to show the structure of the talk. You shall be presenting in a conference type of setting, however, where many papers will have a very similar structure (everyone will start with ‘introduction’ and end with ‘conclusions’), so think whether this adds anything, or whether it can be skipped. You may find yourself in a position where you want to cut unnecessary slides, and ‘table of contents’ (or similar) is one of the prime candidates. For similar reasons, do not close your talk with a final slide showing ‘Thank you for your attention’ or ‘Questions?’.</li>
+<li>Slides typically have a headline, helping to signal what is ahead in the next minute or two. Be specific in your choice. For instance, when discussing the results of an empirical probit estimation that models the probability of enrolling in college, rather than mechanically writing ‘Empirical Results’ in the title, call it ‘Probability of College Enrollment’. If you work with subtitles, call it ‘Marginal Effects’. This way, the audience picks up essential and relevant information from the slide, rather than the vacuous ‘Empirical Results’.</li>
+<li>Presentation slides are often very suitable for showing graphs of data, tables of data, mathematical equations, game or decision trees, time lines, flow charts, or other modeling and data devices, but less so to present large sections of text. Keep textual bits on keyword level, or only show core sentences. Work with bullet-point lists where appropriate.</li>
+<li>Readability and legibility are important. You do not want to overload slides with information, and yet you do want to convey the most important bits. Often, this involves making compromises between form and content. For instance, empirical models often involve software output in table form showing columns of coefficient estimates, standard errors, p-values, and so on, for a long list of parameters. Most of the columns are uninteresting for a presentation, even if you keep them in the paper or even if the original source shows them in a particular format. Perhaps you just keep a coefficient value and an asterisk indication (as in <span class="math inline">\(1.23^{**}\)</span>, and explain in words what the two <span class="math inline">\(**\)</span> signify). Most of the parameters are also not interesting, so confine yourself to the ones of direct interest. Hence, do not copy &amp; paste tables from a paper but tailor what you show to your specific presentation needs.</li>
+<li>If you use mathematical equations, please explain the symbols clearly (if not on the slide, then during the presentation), and say in words what the model equations mean (and where they come from). Avoid lengthy derivations of optimization problems, instead provide the intuition of how an equilibrium may be affected by parameter variations.</li>
+<li>Do not use cartoons and/or animations for entertainment in your slides.</li>
+</ul>
+<!-- SubSection........................................................ -->
+</section>
+<section id="presentation-style" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="presentation-style"><span class="header-section-number">10.4</span> Presentation Style</h2>
+<p>Think of your audience. Some will find it intrinsically very interesting what you look at, others cannot relate to the topic of your choice. In some sense, you can control your audience’s interest by stimulating and engaging their minds. However, there is a fine line to tread between making your presentation an ‘elevator sales pitch’ and keeping up information content. The latter needs priority. The former can help getting people on your side. You want them to think through what you say and get them to the point where they can ask critical questions. Critical questions are to the point, because it is clear to your audience what you are talking about, and they are meant to signal remaining doubts that your listeners may have when thinking about the issue you propose.</p>
+<p>The way you talk may help or distract readers from listening to you. Often, it helps to make eye contact with indviduals in the audience, but avoid staring at particular persons. Be responsive to signals you receive from your audience, and adapt your talk to what you pick up. Do not, however, get entangled in discussing secondary issues. Speak freely, where possible without reading off from notes, but do have some notes at hand if they help you keeping order. Do not read out your slides, but rather explain what’s on them. Do not stand squarely in front of the projected slides, and make sure that you do not block the view of any of the members in your audience. Point with your finger (or a pointer) to elements of graphs or tables, and explain very briefly how to read a graph, or what to find where in the table.</p>
+<p>Many students will find it useful to practice presentations in a mock presentation, and you may want to take the initiative of organizing such a trial.</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="sec-prespitch" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="sec-prespitch"><span class="header-section-number">10.5</span> Thesis Pitch Presentation</h2>
+<p>The Thesis Pitch serves a different purpose than the final presentation of Research Project, Policy Seminars &amp; Policy Brief or Thesis. In particular, there is very little time available, so the presentation really is about being able to quickly make your point and engage the listeners. Therefore, you do not rely first and foremost on presentation slides. However, to keep attention of the audience, who will see a sizeable number of research ideas being rapidly presented in a row, it is a good idea to have a single presentation slide to show. See the example in <a href="#fig-pitch" class="quarto-xref">Figure&nbsp;2</a>.</p>
+<!-- multicolumn setup .................................................... -->
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>We prefer a plain-vanilla layout that only shows some bare-bone necessary information (to start with: your name and the name of your supvervisor), and that helps you in your pitch. You want to make salient what your question is, how you think you will approach it, and what type of data you plan to use. But you may also want to be able to say what motivates your study and why your question still needs an answer. Main point of the pitch is the idea, not the possible answers or detail on how to find it. Hopefully, your talk sparks responses from the audience.</p>
+</div><div class="column" style="width:50%;">
+<div id="fig-pitch" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-pitch-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Template for Thesis Pitch Presentation Slide
+</figcaption>
+<div aria-describedby="fig-pitch-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/PitchTemplate.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+</figure>
+</div>
+</div>
+</div>
+<!-- end multicolumn setup ................................................ -->
+<!-- SubSection........................................................ -->
+</section>
+<section id="sec-presdiff" class="level2" data-number="10.6">
+<h2 data-number="10.6" class="anchored" data-anchor-id="sec-presdiff"><span class="header-section-number">10.6</span> Difference between Research Project and Thesis</h2>
+<p>Presentations of Research Project and Thesis are very similar, however, there are differences. A formal difference is that slightly more time is available for the thesis, and the number of slides can reflect this. The precise number depends a bit on how much information they contain and how quickly you wish to flick through them. Many presentations will show less than 1 slide per minute, and perhaps only 1 slide per 2 or 3 minutes.</p>
+<p>There are differences in content as well. Whereas the Research Project focuses on salient contributions of others to a certain topic or strand of literature, the thesis emphasizes the student’s own contribution to the discussion. This involves, in particular, that the section to review the relevant literature should be held brief for the thesis, mainly to sketch the context of the current paper. Instead, the presenter should make clear the specifics of her or his paper in that given context, so, for instance for an empirical paper, tell what the data is that have been used, how the sample has been selected, and what type of pre-analysis steps have been taken before the results were generated.</p>
+<p>Most room in a thesis should be devoted to talk about empirical methodology and findings or the setup and implications of a theoretical model, whatever has priority in your case. Much emphasis should also be put on the interpretation of results: both within the frame of the current paper, but also reflecting back to the context of the literature.</p>
+<!-- SECTION ********************************************************** -->
+</section>
+</section>
+<section id="references" class="level1" data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span> References</h1>
+<div style="display:none">
+<span class="math inline">\(\nextSection\)</span>
+</div>
+<!-- SECTION ********************************************************** -->
+<!-- SubSection........................................................ -->
+<section id="sec-refs" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="sec-refs"><span class="header-section-number">11.1</span> An Example Reference List</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-aghion1998a" class="csl-entry" role="listitem">
+Aghion, Philippe, and Peter Howitt. 1998a. <span>“Capital Accumulation and Innovation as Complementary Factors in Long-Run Growth.”</span> <em>Journal of Economic Growth</em> 3: 111–30.
+</div>
+<div id="ref-aghion1998b" class="csl-entry" role="listitem">
+———. 1998b. <span>“Market Structure and the Growth Process.”</span> <em>Review of Economic Dynamics</em> 1: 276–305.
+</div>
+<div id="ref-benhabib2011" class="csl-entry" role="listitem">
+Benhabib, Jess, Alberto Bisin, and Shenghao Zhu. 2011. <span>“The Distribution of Wealth and Fiscal Policy in Economies with Finitely Lived Agents.”</span> <em>Econometrica</em> 79: 123–57.
+</div>
+<div id="ref-cochrane2005" class="csl-entry" role="listitem">
+Cochrane, John H. 2005. <span>“Writing Tips for <span>Ph.D.</span> Students.”</span> Unpublished. Graduate School of Business. University of Chicago. <a href="https://static1.squarespace.com/static/5e6033a4ea02d801f37e15bb/t/5eea8ee7c4488718b640f3c6/1592430312374/phd_paper_writing.pdf">https://static1.squarespace.com/static/5e6033a4ea02d801f37e15bb/t/5eea8ee7c4488718b640f3c6/1592430312374/phd_paper_writing.pdf</a>.
+</div>
+<div id="ref-dhaene2006" class="csl-entry" role="listitem">
+Dhaene, Geert, Koen Jochmans, and Bram Thuysbaert. 2006. <span>“Jackknife Bias Reduction for Nonlinear Dynamic Panel Data Models with Fixed Effects.”</span> Unpublished. Department of Economics, K.U. Leuven University.
+</div>
+<div id="ref-heckman1981" class="csl-entry" role="listitem">
+Heckman, James J. 1981. <span>“The Incidental Parameters Problem and the Problem of Initial Conditions in Estimating a Discrete Time-Discrete Data Stochastic Process.”</span> In <em>Structural Analysis of Discrete Data with Econometric Applications</em>, edited by Charles F. Manski and Daniel McFadden, 179–97. Cambridge, Massachusetts: MIT Press.
+</div>
+<div id="ref-ljungqvist2012" class="csl-entry" role="listitem">
+Ljungqvist, Lars, and Thomas J. Sargent. 2012. <em>Recursive Macroeconomic Dynamics</em>. 3rd ed. Cambridge, Massachusetts: MIT Press.
+</div>
+<div id="ref-schwabish2014" class="csl-entry" role="listitem">
+Schwabish, Jonathan A. 2014. <span>“An Economist’s Guide to Visualizing Data.”</span> <em>Journal of Economic Perspectives</em> 28 (1): 209–34.
+</div>
+<div id="ref-varian1998" class="csl-entry" role="listitem">
+Varian, Hal R. 1998. <span>“How to Build an Economic Model in Your Spare Time.”</span> In <em>Passion and Craft: Economists at Work</em>, edited by Michael Szenberg, 256–71. Ann Arbor, Michigan: University of Michigan Press.
+</div>
+</div>
+<!-- SubSection........................................................ -->
+</section>
+<section id="sec-links" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="sec-links"><span class="header-section-number">11.2</span> Resources</h2>
+<p>Here we list a number of resources and internet links that may be of interest. Last checked on October 25, 2023.</p>
+<ol class="example" type="1">
+<li><p>Manuals for Thesis, Research Project and Policy Seminars &amp; Policy Brief (‘the Manual’); they cover aspects such as</p>
+<ol type="i">
+<li>learning outcomes and place within the program</li>
+<li>year-specific deadlines</li>
+<li>a description of evaluation process and evaluation criteria</li>
+<li>and further procedural aspects.</li>
+</ol>
+<p>This information is available through Canvas, see point 2.</p></li>
+<li><p>Canvas with general information on the program, the MSc Econ community page on:</p>
+<ol type="i">
+<li>‘MSc Economics: General Information’</li>
+<li>Economics and Math Refresher</li>
+<li>Research Project: ‘Research Project Economics’ (Econ Track)</li>
+<li>‘Policy Seminars and Policy Brief’ (Public Policy Track)</li>
+<li>Thesis: ‘Thesis MSc EC’ (Econ &amp; Public Policy Track)</li>
+</ol>
+<p>Students may want to make sure to have access to all of these pages.</p></li>
+<li><p><a href="https://sbe.vu.nl">VU SBE website</a> for rules and regulations (TER) and ancillary deadlines, e.g.</p>
+<ol type="i">
+<li><a href="https://vu.nl/en/student/teaching-and-examination-regulations-masters-programmes/ter-sbe">TER Masters</a></li>
+</ol></li>
+<li><p>The LaTeX software can be installed on your local machine by downloading from one of the major distributors that set up an entire typesetting system. Such options include</p>
+<ol type="i">
+<li>(for Windows, Mac, Linux): <a href="https://miktex.org">MiKTeX</a></li>
+<li>(for Mac): <a href="https://www.tug.org/mactex">MacTeX</a></li>
+<li>(in cloud): <a href="https://www.overleaf.com">Overleaf</a></li>
+</ol>
+<p>The former two are free, the latter is commercial/fremium but also offers a LaTeX tutorial and requires no installation.</p></li>
+<li><p>A first introduction to main variants of English can be found on <a href="http://en.wikipedia.org/wiki/Comparison_of_American_and_British_English">Wikipedia</a></p></li>
+<li><p>Some resources and tutorials for <span class="smallcaps">Stata</span></p>
+<ol type="i">
+<li><a href="https://www.princeton.edu/~otorres/Stata/">Princeton’s Oscar Torres-Reyna</a><br>
+</li>
+<li><a href="https://wlm.userweb.mwn.de/Stata/">Uni Siegen’s Wolfgang Ludwig-Mayerhofer</a><br>
+</li>
+<li><a href="https://stats.oarc.ucla.edu/stata/">UCLA Statistical Consulting Group</a></li>
+</ol></li>
+<li><p>A very useful guide to academic writing<br> <a href="http://advice.writing.utoronto.ca/">University of Toronto</a></p></li>
+<li><p>The university library has many useful resources. For instance,</p>
+<ol type="i">
+<li>an online course for literature citation and referencing<br> <a href="http://libguides.vu.nl/b-business-admin/intro">UB guide</a></li>
+<li>research services for data use,<br> <a href="https://vu.nl/en/about-vu/divisions/university-library/more-about/searching-for-data">UB data</a></li>
+<li>an archive of Theses and Dissertations written at our university,<br> <a href="https://www.surfsharekit.nl/">thesis archive</a></li>
+</ol></li>
+<li><p>LaTeX users may find <a href="http://www.bibtex.org">Bibtex</a> or <a href="https://www.ctan.org/pkg/biblatex">Biblatex</a> useful, MS Word users can benefit from <a href="https://www.ub.vu.nl/en/help-advice/tools/endnote/index.aspx">EndNote</a></p></li>
+<li><p>The <a href="https://apastyle.apa.org/">APA Publication Manual</a> gives details on how to cite and reference bibliographic information according to the widely used guidelines of the American Psychological Association</p></li>
+<li><ol type="i">
+<li><p>A very useful guide to research data is available through the EUI data collection</p>
+<p><a href="https://www.eui.eu/Research/Library/ResearchGuides/Economics/Statistics">Introduction to Statistical Data • European University Institute (eui.eu)</a></p>
+<p>Some of the data sets on that list may also be accessible to our students (not through the EUI, obviously).</p></li>
+<li><p>Example of a data archive of the <a href="https://journaldata.zbw.eu/journals/jae">Journal of Applied Econometrics</a></p>
+<p>Most top-level journals now make data of underlying publications available on their websites, wherever possible.</p></li>
+</ol></li>
+</ol>
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>e.g., <span class="math inline">\(\partial x'\beta/\partial x_k = \beta_k\)</span>, but <span class="math inline">\(\partial (\sum x^j\beta_j)/\partial x = \sum jx^{j-1}\beta_j\)</span><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>e.g., <span class="math inline">\(\partial \Phi(x'\beta)/\partial x_k = \phi(x'\beta) \beta_k\)</span>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Standard deviations have been suppressed in Table 2. Can you see why they are not needed?<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Cicero never used footnotes.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>In fact, the present document uses the default settings of the scientific publishing system available at <a href="https://quarto.org">Quarto.org</a>, that use the Chicago Manual of Style author-date.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

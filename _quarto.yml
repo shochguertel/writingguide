@@ -1,0 +1,33 @@
+title: "Writing an Academic Paper"
+subtitle: |
+    | A Short Guide for Students
+    |
+    | MSc Economics • Vrije Universiteit Amsterdam
+author:
+    name: "Stefan Hochguertel"
+date: October 25, 2023
+date-modified: today
+toc: true
+toc-title: Contents
+toc-expand: 1
+toc-depth: 3
+reference-location: document
+citation-location: document
+bibliography: writingguide.bib
+number-sections: true
+fig-cap-location: top
+tbl-cap-location: top
+crossref:
+  chapters: false
+format:
+  html:
+    page-layout: full
+    toc: true
+    toc-location: left
+    title-block-banner: "#FFDDFF"
+    title-block-banner-color: black
+    html-math-method: mathjax
+    include-in-header: 
+    - mathjaxdirective.html 
+abstract: |
+    This writing guide gives some hopefully useful hints and suggestions on how to go through the process of writing and presenting a term paper (Research Project) or final (master) Thesis. It complements the more formal Manual for Research Project and Thesis, as well as rules and regulations set by the faculty board.
